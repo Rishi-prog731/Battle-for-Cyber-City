@@ -1,0 +1,113 @@
+{
+    "folders": [
+        {
+            "path": "."
+        },
+        {
+            "path": "src"
+        },
+        {
+            "path": "docs"
+        },
+        {
+            "path": ".github"
+        }
+    ]
+    "settings": {
+        "files.exclude": {
+            ".github": true,
+            "docs": true,
+            "src": true,
+        },
+        "material-icon-theme.folders.color": "#90a4ae",
+        "better-comments.highlightPlainText": true,
+        "better-comments.multilineComments": true,
+        "better-comments.tags": [
+            {
+                "tag": "!",
+                "color": "#FF2D00",
+                "strikethrough": false,
+                "underline": false,
+                "backgroundColor": "transparent",
+                "bold": false,
+                "italic": false
+            },
+            {
+                "tag": "?",
+                "color": "#3498DB",
+                "strikethrough": false,
+                "underline": false,
+                "backgroundColor": "transparent",
+                "bold": false,
+                "italic": false
+            },
+            {
+                "tag": "//",
+                "color": "#474747",
+                "strikethrough": true,
+                "underline": false,
+                "backgroundColor": "transparent",
+                "bold": false,
+                "italic": false
+            },
+            {
+                "tag": "todo",
+                "color": "#FF8C00",
+                "strikethrough": false,
+                "underline": false,
+                "backgroundColor": "transparent",
+                "bold": false,
+                "italic": false
+            },
+            {
+                "tag": "*",
+                "color": "#98C379",
+                "strikethrough": false,
+                "underline": false,
+                "backgroundColor": "transparent",
+                "bold": false,
+                "italic": false
+            }
+        ],
+        "editor.codeActionsOnSave": {
+            "source.fixAll": true,
+            "source.organizeImports": true
+        },
+        "editor.quickSuggestions": {
+            "other": "on",
+            "comments": "on",
+            "strings": "on"
+        },
+        "editor.tokenColorCustomizations": {
+            "comments": "#eb1e1e",
+        },
+        "editor.wordWrap": "off",
+        "editor.fontFamily": "Operator Mono",
+        "editor.fontLigatures": true,
+        "editor.lineHeight": 24,
+        "npm.autoDetect": "on",
+        "terminal.integrated.fontFamily": "monospace",
+        "terminal.integrated.fontSize": 14,
+        "terminal.integrated.lineHeight": 1.5,
+        "terminal.integrated.letterSpacing": 0,
+        "workbench.colorCustomizations": {},
+        "workbench.preferredDarkColorTheme": "GitHub Dark",
+        "workbench.preferredLightColorTheme": "GitHub Light",
+        "zenMode.centerLayout": false,
+        "zenMode.fullScreen": true,
+        "zenMode.hideActivityBar": false,
+        "zenMode.hideTabs": false,
+        "zenMode.hideStatusBar": false,
+        "zenMode.hideLineNumbers": false,
+        "zenMode.silentNotifications": true,
+        "zenMode.restore": true,
+    },
+    "tasks": {
+        "version": "2.0.0",
+        "tasks": []
+    },
+    "launch": {
+        "configurations": [],
+        "compounds": []
+    }
+}
