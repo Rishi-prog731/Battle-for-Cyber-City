@@ -1,2 +1,3 @@
-# Repo-Template
-This a template for new repos.
+# Cyber-City
+
+Cyber city stradegy game for SAMSAT
