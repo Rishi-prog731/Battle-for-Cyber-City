@@ -12,7 +12,7 @@
         {
             "path": ".github"
         }
-    ]
+    ],
     "settings": {
         "files.exclude": {
             ".github": true,
