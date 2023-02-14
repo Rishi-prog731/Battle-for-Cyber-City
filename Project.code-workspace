@@ -22,7 +22,14 @@
     },
     "tasks": {
         "version": "2.0.0",
-        "tasks": []
+        "tasks": [
+            {
+                "label": "Run Python Demo",
+                "type": "shell",
+                "command": "python3 ${workspaceFolder}/src/demo-py/main.py",
+                "problemMatcher": []
+            }
+        ]
     },
     "launch": {
         "configurations": [],
