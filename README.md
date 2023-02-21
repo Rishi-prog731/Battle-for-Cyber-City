@@ -16,6 +16,8 @@ Cyber city stradegy game for SAMSAT
 6. Housing
 7. Fort Sam
 
+## Abilities
+
 | Hacker Abilities (Offense) | City Abilities (Defense)       |
 | -------------------------- | ------------------------------ |
 | 1. MITM                    | 1. Data Encryption             |
@@ -25,7 +27,6 @@ Cyber city stradegy game for SAMSAT
 | 5. Trojan                  | 5. Honey Pot                   |
 | 6. Password Attack         | 6. Multi-Factor Authentication |
 | 7. Ransomware              | 7. Audit Devices & Assets      |
-
 
 ## Events
 
