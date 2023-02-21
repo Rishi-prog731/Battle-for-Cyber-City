@@ -1,5 +1,8 @@
 # Cyber-City
 
+Programming by *Benjamin Bowles*
+Art and Design by *Roland Catapia*
+
 Cyber city stradegy game for SAMSAT
 
 ## Districts
