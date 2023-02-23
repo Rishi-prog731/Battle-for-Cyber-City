@@ -2,10 +2,15 @@
     "folders": [
         {
             "path": "."
+        },
+        {
+            "name": "Source",
+            "path": "./src"
         }
     ],
     "settings": {
         "files.exclude": {
+            "**/src": false
         }
     },
     "tasks": {

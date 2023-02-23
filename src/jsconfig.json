@@ -1,0 +1,9 @@
+{
+    "typeAcquisition": {
+        "enable": true,
+        "include": [
+            "jest",
+            "express"
+        ]
+    }
+}
