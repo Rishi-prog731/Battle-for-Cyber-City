@@ -28,6 +28,7 @@ Cyber city stradegy game for SAMSAT
 | 6. Password Attack         | 6. Multi-Factor Authentication |
 | 7. Ransomware              | 7. Audit Devices & Assets      |
 
+
 ## Events
 
 1. Snowstorm - Defense can only play 1 ability

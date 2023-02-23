@@ -4,9 +4,7 @@ const router = express.Router();
 const db = require("../db");
 
 router.get("/", (req, res) => {
-  db.all("SELECT * FROM lorem", (err, rows) => {
-    res.json(rows);
-  });
+  res.send("Hello World!");
 });
 
 router.post("/", (req, res) => {
