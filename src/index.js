@@ -11,7 +11,6 @@ const app = require("./app/server");
 app.set("port", port);
 
 const server = http.createServer(app);
-console.log(hostname + port);
 
 server.on("connection", (socket) => {
   server.once("close", () => {
