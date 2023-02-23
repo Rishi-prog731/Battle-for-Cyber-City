@@ -8,8 +8,8 @@
   },
   "scripts": {
     "test": "jest --color",
-    "dev": "nodemon ./app/app.js",
-    "start": "node ./app/app.js"
+    "dev": "nodemon ./index.js",
+    "start": "node ./index.js"
   },
   "repository": {
     "type": "git",
