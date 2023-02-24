@@ -1,6 +1,6 @@
-const sqlite3 = require("sqlite3").verbose();
-const db = new sqlite3.Database("./db.sqlite3");
+const path = require("path");
+const fs = require("fs");
 
-db.serialize(() => {});
+const db = {};
 
 module.exports = db;
