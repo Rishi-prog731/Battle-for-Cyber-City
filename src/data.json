@@ -28,3 +28,30 @@
     "damage": 20
   }
 }
+
+{
+  "Data Encryption": {
+    "description": "",
+    "matchup": ""
+  },
+  "Anti-malware Software": {
+    "description": "",
+    "matchup": ""
+  },
+  "Firewall": {
+    "description": "",
+    "matchup": ""
+  },
+  "Honey Pot": {
+    "description": "",
+    "matchup": ""
+  },
+  "Multifactor Authentication": {
+    "description": "",
+    "matchup": ""
+  },
+  "Audit Devices & Assets": {
+    "description": "",
+    "matchup": ""
+  }
+}
