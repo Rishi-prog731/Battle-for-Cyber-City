@@ -18,7 +18,4 @@ app.use(bodyParser.json());
 const main = require("./routes/main");
 app.use("/", main);
 
-const api = require("./routes/api");
-app.use("/api", api);
-
 module.exports = app;
