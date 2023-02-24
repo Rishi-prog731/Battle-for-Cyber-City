@@ -1,4 +1,5 @@
 {
+  "Hacker Abilities":{
   "MITM": {
     "description": "",
     "damage": 10
@@ -27,31 +28,32 @@
     "description": "",
     "damage": 20
   }
-}
+},
 
-{
+"City Abilities":{
   "Data Encryption": {
     "description": "",
-    "matchup": ""
+    "matchup": "MITM"
   },
   "Anti-malware Software": {
     "description": "",
-    "matchup": ""
+    "matchup": "Malware"
   },
   "Firewall": {
     "description": "",
-    "matchup": ""
+    "matchup": "DDoS"
   },
   "Honey Pot": {
     "description": "",
-    "matchup": ""
+    "matchup": "Phishing"
   },
   "Multifactor Authentication": {
     "description": "",
-    "matchup": ""
+    "matchup": "Password Attack"
   },
   "Audit Devices & Assets": {
     "description": "",
-    "matchup": ""
+    "matchup": "Ransomware"
   }
+}
 }
