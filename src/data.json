@@ -1,59 +1,59 @@
 {
-  "Hacker Abilities":{
-  "MITM": {
-    "description": "",
-    "damage": 10
+  "Hacker Abilities": {
+    "MITM": {
+      "description": "",
+      "damage": 10
+    },
+    "Malware": {
+      "description": "",
+      "damage": 10
+    },
+    "DDoS": {
+      "description": "",
+      "damage": 10
+    },
+    "Phishing": {
+      "description": "",
+      "damage": 10
+    },
+    "Trojan": {
+      "description": "",
+      "damage": 10
+    },
+    "Password Attack": {
+      "description": "",
+      "damage": 20
+    },
+    "Ransomware": {
+      "description": "",
+      "damage": 20
+    }
   },
-  "Malware": {
-    "description": "",
-    "damage": 10
-  },
-  "DDoS": {
-    "description": "",
-    "damage": 10
-  },
-  "Phishing": {
-    "description": "",
-    "damage": 10
-  },
-  "Trojan": {
-    "description": "",
-    "damage": 10
-  },
-  "Password Attack": {
-    "description": "",
-    "damage": 20
-  },
-  "Ransomware": {
-    "description": "",
-    "damage": 20
-  }
-},
 
-"City Abilities":{
-  "Data Encryption": {
-    "description": "",
-    "matchup": "MITM"
-  },
-  "Anti-malware Software": {
-    "description": "",
-    "matchup": "Malware"
-  },
-  "Firewall": {
-    "description": "",
-    "matchup": "DDoS"
-  },
-  "Honey Pot": {
-    "description": "",
-    "matchup": "Phishing"
-  },
-  "Multifactor Authentication": {
-    "description": "",
-    "matchup": "Password Attack"
-  },
-  "Audit Devices & Assets": {
-    "description": "",
-    "matchup": "Ransomware"
+  "City Abilities": {
+    "Data Encryption": {
+      "description": "",
+      "matchup": "MITM"
+    },
+    "Anti-malware Software": {
+      "description": "",
+      "matchup": "Malware"
+    },
+    "Firewall": {
+      "description": "",
+      "matchup": "DDoS"
+    },
+    "Honey Pot": {
+      "description": "",
+      "matchup": "Phishing"
+    },
+    "Multifactor Authentication": {
+      "description": "",
+      "matchup": "Password Attack"
+    },
+    "Audit Devices & Assets": {
+      "description": "",
+      "matchup": "Ransomware"
+    }
   }
-}
 }
