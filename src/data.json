@@ -1,7 +1,30 @@
-["MITM":{}
-"Malware":{}
-"DDoS":{}
-"Phishing":{}
-"Trojan":{}
-"Password Attack":{}
-"Ransomware":{}]
+{
+  "MITM": {
+    "description": "",
+    "damage": 10
+  },
+  "Malware": {
+    "description": "",
+    "damage": 10
+  },
+  "DDoS": {
+    "description": "",
+    "damage": 10
+  },
+  "Phishing": {
+    "description": "",
+    "damage": 10
+  },
+  "Trojan": {
+    "description": "",
+    "damage": 10
+  },
+  "Password Attack": {
+    "description": "",
+    "damage": 20
+  },
+  "Ransomware": {
+    "description": "",
+    "damage": 20
+  }
+}
