@@ -1,11 +1,14 @@
 const path = require("path");
 const fs = require("fs");
 
-const DATA_PATH = "./data.json"
-const getData = async () => {
+const DATA_PATH = "./data.json";
+const getData = () =>
+{
     
-}
+};
 
-const db = {};
+const db = {
+    getData
+};
 
 module.exports = db;

@@ -26,10 +26,12 @@ class Event {
 
 }
 
-function test() {
+async function test() {
+  console.log(db.getData())
   console.log("Game Test!");
 }
 
 module.exports = {
   test,
 };
+ 
