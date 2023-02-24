@@ -27,7 +27,7 @@ class Event {
 }
 
 async function test() {
-  console.log(db.getData())
+  console.log(await db.getData())
   console.log("Game Test!");
 }
 
