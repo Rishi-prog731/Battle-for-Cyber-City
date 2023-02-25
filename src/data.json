@@ -1,59 +1,68 @@
 {
-  "Hacker Abilities": {
-    "MITM": {
-      "description": "",
-      "damage": 10
-    },
-    "Malware": {
-      "description": "",
-      "damage": 10
-    },
-    "DDoS": {
-      "description": "",
-      "damage": 10
-    },
-    "Phishing": {
-      "description": "",
-      "damage": 10
-    },
-    "Trojan": {
-      "description": "",
-      "damage": 10
-    },
-    "Password Attack": {
-      "description": "",
-      "damage": 20
-    },
-    "Ransomware": {
-      "description": "",
-      "damage": 20
-    }
-  },
+"MITM": {
+  "name": "",
+  "description": "",
+  "damage": 10
+},
+"Malware": {
+  "name": "",
+  "description": "",
+  "damage": 10
+},
+"DDoS": {
+  "name": "",
+  "description": "",
+  "damage": 10
+},
+"Phishing": {
+  "name": "",
+  "description": "",
+  "damage": 10
+},
+"Trojan": {
+  "name": "",
+  "description": "",
+  "damage": 10
+},
+"Password_Attack": {
+  "name": "",
+  "description": "",
+  "damage": 20
+},
+"Ransomware": {
+  "name": "",
+  "description": "",
+  "damage": 20
+},
 
-  "City Abilities": {
-    "Data Encryption": {
-      "description": "",
-      "matchup": "MITM"
-    },
-    "Anti-malware Software": {
-      "description": "",
-      "matchup": "Malware"
-    },
-    "Firewall": {
-      "description": "",
-      "matchup": "DDoS"
-    },
-    "Honey Pot": {
-      "description": "",
-      "matchup": "Phishing"
-    },
-    "Multifactor Authentication": {
-      "description": "",
-      "matchup": "Password Attack"
-    },
-    "Audit Devices & Assets": {
-      "description": "",
-      "matchup": "Ransomware"
-    }
-  }
+"Data_Encryption": {
+  "name": "",
+  "description": "",
+  "matchup": ""
+},
+"Anti_Malware_software": {
+  "name": "",
+  "description": "",
+  "matchup": ""
+},
+"Firewall": {
+  "name": "",
+  "description": "",
+  "matchup": ""
+},
+"Trust_Zones": {
+  "name": "",
+  "description": "",
+  "matchup": ""
+},
+"Multifactor_Authentication": {
+  "name": "",
+  "description": "",
+  "matchup": ""
+},
+"Audit_Devices_and_Assets": {
+  "name": "",
+  "description": "",
+  "matchup": ""
+}
 }
