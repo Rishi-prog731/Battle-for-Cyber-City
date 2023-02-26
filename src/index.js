@@ -2,10 +2,6 @@
 require("dotenv").config();
 const http = require("http");
 
-const db = require("./app/db");
-const userData = db.openUserDatabase();
-console.log(userData);
-
 const game = require("./app/game").test();
 
 const hostname = process.env.hostname,

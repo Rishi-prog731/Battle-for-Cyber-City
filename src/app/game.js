@@ -24,7 +24,7 @@ class HackerAbility extends Ability {
 class Event {}
 
 async function test() {
-  //console.log(await db.getData())
+  //console.log(await db.getData());
   //db.openDb();
 }
 
