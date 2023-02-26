@@ -35,7 +35,6 @@ const init = async () => {
  * @param {string} game_token
  */
 const userDatabase_add = async (username, email, game_token) => {
-  console.log("addUser", username, email, game_token);
   await db_users.run(
     `INSERT INTO users (username, email, game_token) VALUES (?, ?, ?)`,
     [username, email, game_token]
