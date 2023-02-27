@@ -9,90 +9,77 @@ const getData = async () => {
 const sqlite3 = require("sqlite3").verbose();
 const sqlite = require("sqlite");
 
-var db_users;
-var db_game;
+var database;
 
 const init = async () => {
-  [db_users, db_game] = await Promise.all([
+  [database] = await Promise.all([
     sqlite.open({
-      filename: "./users.db",
-      driver: sqlite3.Database,
-    }),
-    sqlite.open({
-      filename: "./game.db",
+      filename: "./data.db",
       driver: sqlite3.Database,
     }),
   ]);
 
-  await userDatabase_setup();
-  await userDatabase_clear();
+  await table_users_setup();
+  await table_users_clear();
 };
 
-/**
- *
- * @param {string} username
- * @param {string} email
- * @param {string} game_token
- */
-const userDatabase_add = async (username, email, game_token) => {
-  await db_users.run(
-    `INSERT INTO users (username, email, game_token) VALUES (?, ?, ?)`,
-    [username, email, game_token]
-  );
-};
-
-const userDatabase_setup = async () => {
-  await db_users.run(
+const table_users_setup = async () => {
+  database.run(
     `CREATE TABLE IF NOT EXISTS users (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      username TEXT NOT NULL,
-      email TEXT NOT NULL,
-      game_token TEXT NOT NULL
-    )`
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        username TEXT,
+        email EMAIL,
+        created_at DATETIME
+      ); `
   );
 };
 
-/**
- *
- * @param {string} username
- * @param {string} game_token
- * @returns
- */
-const userDatabase_get = async (username, game_token) => {
-  return await db_users.get(
-    `SELECT * FROM users WHERE username = ? AND game_token = ?`,
-    [username, game_token]
+const table_users_drop = async () => {
+  database.run(`DROP TABLE IF EXISTS users;`);
+};
+
+const table_users_clear = async () => {
+  database.run(`DELETE FROM users;`);
+};
+
+const table_users_insert = async (username, email, created_at = Date.now()) => {
+  database.run(
+    "INSERT INTO users (username, email, created_at) VALUES (?, ?, ?)",
+    [username, email, created_at]
   );
 };
 
-/**
- *
- * @param {string} username
- * @param {string} email
- * @param {string} game_token
- * @returns
- */
-const userDatabase_check = async (username, email, game_token) => {
-  return await db_users.get(
-    `SELECT * FROM users WHERE username = ? AND email = ? AND game_token = ?`,
-    [username, email, game_token]
+const table_users_check = async (username, email) => {
+  return (
+    (await database.run(
+      "SELECT * FROM users WHERE username = ? AND email = ?",
+      [username, email]
+    )) != undefined
   );
 };
 
-const userDatabase_clear = async () => {
-  await db_users.run(`DELETE FROM users`);
+const table_users_get = async (username, email) => {
+  return await database.run(
+    "SELECT * FROM users WHERE username = ? AND email = ?",
+    [username, email]
+  );
+};
+
+const table_users_getAll = async () => {
+  return await database.all("SELECT * FROM users");
 };
 
 module.exports = {
   getData,
   init,
 
-  userDatabase_add,
-  userDatabase_setup,
-  userDatabase_clear,
-  userDatabase_get,
-  userDatabase_check,
+  table_users_setup,
+  table_users_drop,
+  table_users_clear,
+  table_users_insert,
+  table_users_check,
+  table_users_get,
+  table_users_getAll,
 
-  db_game,
-  db_users,
+  database,
 };
