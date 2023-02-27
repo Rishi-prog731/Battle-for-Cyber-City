@@ -31,6 +31,10 @@ app.ws("/", (ws, req) => {
   ws.on("message", (msg) => {
     console.log("Websocket message: ", msg);
   });
+
+  ws.on("close", () => {
+    console.log("Websocket closed");
+  });
 });
 
 module.exports = app;
