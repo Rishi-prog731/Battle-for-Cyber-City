@@ -2,6 +2,7 @@ const path = require("path");
 
 const express = require("express");
 const app = express();
+const ws = require("express-ws")(app);
 
 // public
 app.use(express.static(path.join(__dirname, "public")));
@@ -23,5 +24,13 @@ app.use("/api", api);
 
 const debug = require("./routes/debug");
 app.use("/debug", debug);
+
+// WebSockets
+app.ws("/", (ws, req) => {
+  console.log("Websocket connected");
+  ws.on("message", (msg) => {
+    console.log("Websocket message: ", msg);
+  });
+});
 
 module.exports = app;

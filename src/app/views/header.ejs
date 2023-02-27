@@ -27,4 +27,14 @@
         <!--Title-->
         <title><%= title %></title>
 
+        <script>
+            let webSocket = new WebSocket(location.origin.replace(/^http/, 'ws'));
+            let el;
+
+            webSocket.onmessage = (event) => {
+                el = document.getElementById('message');
+                el.innerHTML = event.data;
+            };
+        </script>
+
     </head>

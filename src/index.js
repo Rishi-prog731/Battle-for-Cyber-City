@@ -12,20 +12,10 @@ app.set("port", port);
 
 const server = http.createServer(app);
 
+const expressWs = require("express-ws")(app, server);
+
 server.on("connection", (socket) => {});
 
 server.listen(port, hostname, () => {
   console.log(`server running at http://${hostname}:${port}/`);
-});
-
-const WebSocketServer = require("ws").Server;
-const wss = new WebSocketServer({ server: server });
-
-wss.on("connection", (ws) => {
-  console.log("Client connected");
-  ws.on("close", () => console.log("Client disconnected"));
-  ws.on("message", (message) => {
-    console.log("received: %s", message);
-    ws.send(message);
-  });
 });
