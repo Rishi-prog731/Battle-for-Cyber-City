@@ -6,6 +6,9 @@ Art and Design by *Roland Catapia*
 
 Cyber city stradegy game for SAMSAT
 
+## DB Sketch
+[DrawSQL.app](https://drawsql.app/teams/holeinonestudios/diagrams/cybercity)
+
 ## Districts
 
 1. Business
