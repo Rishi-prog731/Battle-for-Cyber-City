@@ -28,6 +28,7 @@ app.use("/debug", debug);
 // WebSockets
 app.ws("/", (ws, req) => {
   console.log("Websocket connected");
+
   ws.on("message", (msg) => {
     console.log("Websocket message: ", msg);
   });
