@@ -15,13 +15,13 @@ app.use(bodyParser.json()); // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Routes
-const main = require("./routes/main");
+const main = require("./routes/client");
 app.use("/", main);
-
-const game = require("./routes/game");
-app.use("/game", game);
 
 const api = require("./routes/api");
 app.use("/api", api);
+
+const debug = require("./routes/debug");
+app.use("/debug", debug);
 
 module.exports = app;
