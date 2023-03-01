@@ -25,7 +25,13 @@ const init = async () => {
 
   // setup types table
   await table_types_setup();
+
+  // setup abilities table
+  await table_abilities_setup();
+  await table_abilities_clear();
 };
+
+// USER TABLE FUNCTIONS
 
 const table_users_setup = async () => {
   database.run(
@@ -73,6 +79,8 @@ const table_users_getAll = async () => {
   return await database.all("SELECT * FROM users");
 };
 
+// TYPES TABLE FUNCTIONS
+
 const table_types_setup = async () => {
   Promise.all([
     await database.run("DROP TABLE IF EXISTS types;"),
@@ -85,6 +93,29 @@ const table_types_setup = async () => {
     database.run(`INSERT INTO types(name) VALUES('hacker'),('city');`),
   ]);
 };
+
+// ABILTY TABLE FUNCTIONS
+
+const table_abilities_setup = async () => {
+  database.run(`
+    CREATE TABLE IF NOT EXISTS abilities (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      name TEXT,
+      type_id INTEGER,
+      description TEXT,
+      cost INTEGER,
+      FOREIGN KEY(type_id) REFERENCES types(id)
+    );
+  `);
+};
+
+const table_abilities_clear = async () => {
+  database.run(`DELETE FROM abilities;`);
+};
+
+// GAME TABLE FUNCTIONS
+
+// EVENT ABLE FUNCTIONS
 
 module.exports = {
   getData,
