@@ -19,8 +19,12 @@ const init = async () => {
     }),
   ]);
 
+  // setup user table
   await table_users_setup();
   await table_users_clear();
+
+  // setup types table
+  await table_types_setup();
 };
 
 const table_users_setup = async () => {
@@ -69,6 +73,19 @@ const table_users_getAll = async () => {
   return await database.all("SELECT * FROM users");
 };
 
+const table_types_setup = async () => {
+  Promise.all([
+    await database.run("DROP TABLE IF EXISTS types;"),
+    await database.run(
+      `CREATE TABLE IF NOT EXISTS types (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT
+        );`
+    ),
+    database.run(`INSERT INTO types(name) VALUES('hacker'),('city');`),
+  ]);
+};
+
 module.exports = {
   getData,
   init,
@@ -80,6 +97,8 @@ module.exports = {
   table_users_check,
   table_users_get,
   table_users_getAll,
+
+  table_types_setup,
 
   database,
 };
