@@ -3,7 +3,10 @@
         "enable": true,
         "include": [
             "jest",
-            "express"
+            "express",
+            "sqlite3",
+            "sqlite",
+            "ejs",
         ]
     }
 }
