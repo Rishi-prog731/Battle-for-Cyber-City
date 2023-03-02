@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/hacker", (req, res) => {
-  res.send("Hacker");
+  res.render("hacker", { title: "Hacker" });
 });
 
 router.get("/defender", (req, res) => {
