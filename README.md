@@ -7,8 +7,8 @@ Art and Design by *Roland Catapia*
 Cyber city stradegy game for SAMSAT
 
 - [Cyber-City](#cyber-city)
-  - [DB Sketch](#db-sketch)
+  - [Database](#database)
 
 
-## DB Sketch
+## Database
 [DrawSQL.app](https://drawsql.app/teams/holeinonestudios/diagrams/cybercity)
