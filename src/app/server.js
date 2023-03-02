@@ -16,14 +16,11 @@ app.use(bodyParser.json()); // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Routes
-const main = require("./routes/client");
-app.use("/", main);
-
 const api = require("./routes/api");
 app.use("/api", api);
 
-const debug = require("./routes/debug");
-app.use("/debug", debug);
+const main = require("./routes/main");
+app.use("/", main);
 
 // WebSockets
 app.ws("/", (ws, req) => {

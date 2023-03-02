@@ -32,8 +32,7 @@
             let el;
 
             webSocket.onmessage = (event) => {
-                el = document.getElementById('message');
-                el.innerHTML = event.data;
+                console.log(event.data);
             };
         </script>
 
