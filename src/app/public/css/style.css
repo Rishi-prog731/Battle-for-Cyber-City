@@ -1,0 +1,37 @@
+@font-face {
+    font-family: 'Sora';
+    src: url('../font/Sora-VariableFont_wght.ttf');
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../font/Inter-VariableFont_slnt\,wght.ttf');
+}
+
+:root {
+    --black: #231F20;
+    --white: #FFFBFF;
+    --green: #1AFE49;
+    --purple: #3D43B4;
+    --lightPurple: #8386F5;
+}
+
+h1 {
+    font-family: 'Sora';
+    font-size: 48px;
+    line-height: 72px;
+    font-weight: bold;
+}
+
+h2 {
+    font-family: 'Sora';
+    font-size: 32px;
+    line-height: 48px;
+    font-weight: bold;
+}
+
+body {
+    font-family: 'Inter';
+    font-size: 24px;
+    line-height: 26px;
+}

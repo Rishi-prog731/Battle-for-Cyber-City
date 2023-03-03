@@ -16,6 +16,15 @@
     "tasks": {
         "version": "2.0.0",
         "tasks": [
+            {
+                "label": "Run Dev Server",
+                "type": "shell",
+                "options": {
+                    "cwd": "${workspaceFolder}/src"
+                },
+                "command": "npm run dev",
+                "problemMatcher": []
+            }
         ]
     },
     "launch": {
