@@ -14,6 +14,9 @@
     --green: #1AFE49;
     --purple: #3D43B4;
     --lightPurple: #8386F5;
+
+    color: var(--black);
+    background-color: var(--white);
 }
 
 h1 {
