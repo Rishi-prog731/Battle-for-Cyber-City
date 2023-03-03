@@ -11,7 +11,16 @@
     "settings": {
         "files.exclude": {
             "**/src": false
-        }
+        },
+        "sqltools.connections": [
+            {
+                "previewLimit": 50,
+                "driver": "SQLite",
+                "database": "${workspaceFolder:Source}/database.db",
+                "name": "Cyber City DB"
+            }
+        ],
+        "sqltools.useNodeRuntime": true
     },
     "tasks": {
         "version": "2.0.0",
