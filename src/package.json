@@ -1,7 +1,7 @@
 {
   "name": "cyber-city",
   "version": "1.0.0",
-  "description": "Programming by *Benjamin Bowles*",
+  "description": "Cyber city stradegy game for SAMSAT",
   "main": "default.js",
   "directories": {
     "doc": "../docs"
