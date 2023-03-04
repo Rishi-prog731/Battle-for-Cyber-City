@@ -62,6 +62,31 @@ const hackerAbility = {
         value INTEGER NOT NULL
       );`);
   },
+
+  clear: async () => {
+    database.run(`DELETE FROM hacker_ability`);
+  },
+
+  remove: async (id) => {
+    database.run(`DELETE FROM hacker_ability WHERE id = ?`, [id]);
+  },
+
+  insertAbility: async (name, description, value) => {
+    database.run(
+      `INSERT INTO hacker_ability (name, description, value) VALUES (?, ?, ?)`,
+      [name, description, value]
+    );
+  },
+
+  getAll: async () => {
+    return await database.all(`SELECT * FROM hacker_ability`);
+  },
+
+  get: async (id) => {
+    return await database.get(`SELECT * FROM hacker_ability WHERE id = ?`, [
+      id,
+    ]);
+  },
 };
 
 // Hacker - Event Table
@@ -74,6 +99,29 @@ const hackerEvent = {
         description TEXT NOT NULL,
         extra_ability_count INTEGER NOT NULL
       );`);
+  },
+
+  clear: async () => {
+    database.run(`DELETE FROM hacker_event`);
+  },
+
+  remove: async (id) => {
+    database.run(`DELETE FROM hacker_event WHERE id = ?`, [id]);
+  },
+
+  insertEvent: async (name, description, extraAbilityCount) => {
+    database.run(
+      `INSERT INTO hacker_event (name, description, extra_ability_count) VALUES (?, ?, ?)`,
+      [name, description, extraAbilityCount]
+    );
+  },
+
+  getAll: async () => {
+    database.all(`SELECT * FROM hacker_event`);
+  },
+
+  get: async (id) => {
+    database.get(`SELECT * FROM hacker_event WHERE id = ?`, [id]);
   },
 };
 
@@ -88,6 +136,29 @@ const defenderAbility = {
         value INTEGER NOT NULL
       );`);
   },
+
+  clear: async () => {
+    database.run(`DELETE FROM defender_ability`);
+  },
+
+  remove: async (id) => {
+    database.run(`DELETE FROM defender_ability WHERE id = ?`, [id]);
+  },
+
+  insertAbility: async (name, description, value) => {
+    database.run(
+      `INSERT INTO defender_ability (name, description, value) VALUES (?, ?, ?)`,
+      [name, description, value]
+    );
+  },
+
+  getAll: async () => {
+    database.all(`SELECT * FROM defender_ability`);
+  },
+
+  get: async () => {
+    database.run(`SELECT * FROM defender_ability WHERE id = ?`, [id]);
+  },
 };
 
 // Defender - Event Table
@@ -100,6 +171,29 @@ const defenderEvent = {
         description TEXT NOT NULL,
         extra_ability_count INTEGER NOT NULL
       );`);
+  },
+
+  clear: async () => {
+    database.run(`DELETE FROM defender_event`);
+  },
+
+  remove: async (id) => {
+    database.run(`DELETE FROM defender_event WHERE id = ?`, [id]);
+  },
+
+  insertEvent: async (name, description, extraAbilityCount) => {
+    database.run(
+      `INSERT INTO defender_event (name, description, extra_ability_count) VALUES (?, ?, ?)`,
+      [name, description, extraAbilityCount]
+    );
+  },
+
+  getAll: async () => {
+    database.all(`SELECT * FROM defender_event`);
+  },
+
+  get: async (id) => {
+    database.get(`SELECT * FROM defender_event WHERE id = ?`, [id]);
   },
 };
 

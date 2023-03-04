@@ -1,0 +1,38 @@
+<%- include('header.ejs') %>
+
+<script>
+
+    function getAllHackers() {
+        $.ajax({
+            url: '/api/hacker/ability',
+            type: 'GET',
+            success: function (data) {
+                console.log(data);
+            }
+        });
+    }
+
+    function deleteAllHackers() {
+        $.ajax({
+            url: "/api/hacker/ability",
+            type: "DELETE",
+            success: (data) => {
+                console.log(data);
+            }
+        })
+    }
+
+</script>
+
+<body>
+
+    <div class="debugContainer">
+        <h2>Hackers</h2>
+
+        <button onclick="getAllHackers()">GetAll</button>
+        <button onclick="deleteAllHackers()">DeleteAll</button>
+    </div>
+
+</body>
+
+</html>
