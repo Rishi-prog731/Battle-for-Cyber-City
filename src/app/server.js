@@ -27,7 +27,6 @@ const main = require("./routes/main");
 app.use("/", main);
 
 // WebSockets
-const Websocket = require("./ws");
 app.ws("/", (ws, req) => {
   console.log("Websocket connected");
 
