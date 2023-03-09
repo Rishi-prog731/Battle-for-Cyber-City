@@ -1,8 +1,26 @@
 <div class="alert_box">
+    <script>
+        function toggleAlert() {
+            $('.alert_log').toggleClass('hidden', !$('.alert_log').hasClass('hidden'));
+        }
+
+        webSocket.onmessage = ( event ) =>
+            {
+                console.log( event.data );
+
+                let data = JSON.parse( event.data );
+
+                if ( event.data.mode == "alert" )
+                {
+                    $( '.alert_log' ).append( `<p>${ Date.now().toString() + " => " + data.message }</p>` );
+                }
+            };
+    </script>
     <div class="alert_header">
-        <h1>Alerts</h1>
+        <h2>Alerts</h2>
+        <h2 onclick="toggleAlert()" class="alert_button">X</h2>
     </div>
-    <div class="alert_log">
+    <div class="alert_log hidden">
         <p>ALERT!</p>
         <p>ALERT!</p>
         <p>ALERT!</p>

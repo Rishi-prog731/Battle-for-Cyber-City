@@ -37,6 +37,13 @@ app.ws("/", (ws, req) => {
   ws.on("close", () => {
     console.log("Websocket closed");
   });
+
+  ws.send(
+    JSON.stringify({
+      mode: "alert",
+      message: "Hello from the server!",
+    })
+  );
 });
 
 module.exports = app;

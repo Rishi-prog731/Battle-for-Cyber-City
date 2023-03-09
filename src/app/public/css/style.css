@@ -17,6 +17,10 @@
 
     color: var(--black);
     background-color: var(--white);
+
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
 }
 
 h1 {
@@ -59,7 +63,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 10%;
+    width: 5%;
     aspect-ratio: 1/1;
 
     display: flex;
@@ -93,17 +97,47 @@ body {
     top: 0;
     right: 0;
 
-    height: 50%;
+    height: auto;
     width: 33%;
 
-    border: solid;
+    box-shadow: 0 0 10px var(--lightPurple);
+
+    display: flex;
+    flex-direction: column;
 }
 
 .alert_header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 
+    background-color: var(--lightPurple);
+}
+
+.alert_header > * {
+    margin: 0;
+    padding: 0;
+}
+
+.alert_button {
+    text-align: center;
+    width: 10%;
+    height: auto;
 }
 
 .alert_log {
     display: flex;
     flex-direction: column;
+
+    height: 20rem;
+
+    overflow-y: scroll;
+
+    background-color: var(--lightPurple);
+
+    transition: all 0.2s ease-in-out;
+}
+
+.hidden {
+    height: 0rem;
 }
