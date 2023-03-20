@@ -1,0 +1,3 @@
+// Game Script
+
+module.exports = {};

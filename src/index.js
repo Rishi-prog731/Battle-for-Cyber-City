@@ -10,8 +10,6 @@ app.set("port", port);
 
 const server = http.createServer(app);
 
-const expressWs = require("express-ws")(app, server);
-
 server.on("connection", (socket) => {});
 
 server.listen(port, hostname, () => {

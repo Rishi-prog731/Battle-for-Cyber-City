@@ -1,143 +1,36 @@
-@font-face {
-    font-family: 'Sora';
-    src: url('../font/Sora-VariableFont_wght.ttf');
-}
-
-@font-face {
-    font-family: 'Inter';
-    src: url('../font/Inter-VariableFont_slnt\,wght.ttf');
-}
+@import url('https://fonts.googleapis.com/css2?family=Sora&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
 :root {
-    --black: #231F20;
-    --white: #FFFBFF;
-    --green: #1AFE49;
-    --purple: #3D43B4;
-    --lightPurple: #8386F5;
+    --black :#0C120C;
+    --white :#ECEBF3;
+    --red :#C20114;
+    --blue :#016FB9;
+    --green :#5AFF15;
 
-    color: var(--black);
-    background-color: var(--white);
-
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
+    box-sizing: border-box;
 }
 
 h1 {
     font-family: 'Sora';
+    font-style: normal;
+    font-weight: 700;
     font-size: 48px;
     line-height: 72px;
-    font-weight: bold;
 }
 
 h2 {
     font-family: 'Sora';
+    font-style: normal;
+    font-weight: 700;
     font-size: 32px;
     line-height: 48px;
-    font-weight: bold;
 }
 
-body {
+p {
     font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
     font-size: 24px;
-    line-height: 26px;
-}
-
-/* ============================ */
-
-.city_map {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    z-index: -5;
-
-    background-color: var(--purple);
-}
-
-/* ============================ */
-
-.district {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 5%;
-    aspect-ratio: 1/1;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 2%;
-    border-radius: 100%;
-
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-color: var(--lightPurple);
-
-    transition: all 0.2s ease-in-out;
-}
-
-.district:hover {
-    box-shadow: 0 0 10px var(--lightPurple);
-    cursor: pointer;
-}
-
-.district > img {
-    width: 100%;
-    height: auto;
-}
-
-/* ============================ */
-
-.alert_box {
-    position: fixed;
-    top: 0;
-    right: 0;
-
-    height: auto;
-    width: 33%;
-
-    box-shadow: 0 0 10px var(--lightPurple);
-
-    display: flex;
-    flex-direction: column;
-}
-
-.alert_header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-    background-color: var(--lightPurple);
-}
-
-.alert_header > * {
-    margin: 0;
-    padding: 0;
-}
-
-.alert_button {
-    text-align: center;
-    width: 10%;
-    height: auto;
-}
-
-.alert_log {
-    display: flex;
-    flex-direction: column;
-
-    height: 20rem;
-
-    overflow-y: scroll;
-
-    background-color: var(--lightPurple);
-
-    transition: all 0.2s ease-in-out;
-}
-
-.hidden {
-    height: 0rem;
+    line-height: 36px;
 }
