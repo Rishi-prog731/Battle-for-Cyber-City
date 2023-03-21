@@ -1,0 +1,218 @@
+{
+    "icons/anti-malware": {
+        "prefix": [
+            "icons/anti-malware"
+        ],
+        "body": [
+            "{% include \"./components/icons/anti-malware.html.jinja\" %}"
+        ],
+        "scope": "jinja"
+    },
+    "icons/arrow_back": {
+        "prefix": [
+            "icons/arrow_back"
+        ],
+        "body": [
+            "{% include \"./components/icons/arrow_back.html.jinja\" %}"
+        ],
+        "scope": "jinja"
+    },
+    "icons/audit devices and assets": {
+        "prefix": [
+            "icons/audit devices and assets"
+        ],
+        "body": [
+            "{% include \"./components/icons/audit devices and assets.html.jinja\" %}"
+        ],
+        "scope": "jinja"
+    },
+    "icons/close": {
+        "prefix": [
+            "icons/close"
+        ],
+        "body": [
+            "{% include \"./components/icons/close.html.jinja\" %}"
+        ],
+        "scope": "jinja"
+    },
+    "icons/cybersecurity": {
+        "prefix": [
+            "icons/cybersecurity"
+        ],
+        "body": [
+            "{% include \"./components/icons/cybersecurity.html.jinja\" %}"
+        ],
+        "scope": "jinja"
+    },
+    "icons/data encryption": {
+        "prefix": [
+            "icons/data encryption"
+        ],
+        "body": [
+            "{% include \"./components/icons/data encryption.html.jinja\" %}"
+        ],
+        "scope": "jinja"
+    },
+    "icons/ddos": {
+        "prefix": [
+            "icons/ddos"
+        ],
+        "body": [
+            "{% include \"./components/icons/ddos.html.jinja\" %}"
+        ],
+        "scope": "jinja"
+    },
+    "icons/drop-down": {
+        "prefix": [
+            "icons/drop-down"
+        ],
+        "body": [
+            "{% include \"./components/icons/drop-down.html.jinja\" %}"
+        ],
+        "scope": "jinja"
+    },
+    "icons/firewall": {
+        "prefix": [
+            "icons/firewall"
+        ],
+        "body": [
+            "{% include \"./components/icons/firewall.html.jinja\" %}"
+        ],
+        "scope": "jinja"
+    },
+    "icons/hacker": {
+        "prefix": [
+            "icons/hacker"
+        ],
+        "body": [
+            "{% include \"./components/icons/hacker.html.jinja\" %}"
+        ],
+        "scope": "jinja"
+    },
+    "icons/honey pot": {
+        "prefix": [
+            "icons/honey pot"
+        ],
+        "body": [
+            "{% include \"./components/icons/honey pot.html.jinja\" %}"
+        ],
+        "scope": "jinja"
+    },
+    "icons/location_on": {
+        "prefix": [
+            "icons/location_on"
+        ],
+        "body": [
+            "{% include \"./components/icons/location_on.html.jinja\" %}"
+        ],
+        "scope": "jinja"
+    },
+    "icons/malware": {
+        "prefix": [
+            "icons/malware"
+        ],
+        "body": [
+            "{% include \"./components/icons/malware.html.jinja\" %}"
+        ],
+        "scope": "jinja"
+    },
+    "icons/mitm": {
+        "prefix": [
+            "icons/mitm"
+        ],
+        "body": [
+            "{% include \"./components/icons/mitm.html.jinja\" %}"
+        ],
+        "scope": "jinja"
+    },
+    "icons/multifactor authentification": {
+        "prefix": [
+            "icons/multifactor authentification"
+        ],
+        "body": [
+            "{% include \"./components/icons/multifactor authentification.html.jinja\" %}"
+        ],
+        "scope": "jinja"
+    },
+    "icons/Notifications active": {
+        "prefix": [
+            "icons/Notifications active"
+        ],
+        "body": [
+            "{% include \"./components/icons/Notifications active.html.jinja\" %}"
+        ],
+        "scope": "jinja"
+    },
+    "icons/notifications": {
+        "prefix": [
+            "icons/notifications"
+        ],
+        "body": [
+            "{% include \"./components/icons/notifications.html.jinja\" %}"
+        ],
+        "scope": "jinja"
+    },
+    "icons/password attack": {
+        "prefix": [
+            "icons/password attack"
+        ],
+        "body": [
+            "{% include \"./components/icons/password attack.html.jinja\" %}"
+        ],
+        "scope": "jinja"
+    },
+    "icons/phishing": {
+        "prefix": [
+            "icons/phishing"
+        ],
+        "body": [
+            "{% include \"./components/icons/phishing.html.jinja\" %}"
+        ],
+        "scope": "jinja"
+    },
+    "icons/pull-up": {
+        "prefix": [
+            "icons/pull-up"
+        ],
+        "body": [
+            "{% include \"./components/icons/pull-up.html.jinja\" %}"
+        ],
+        "scope": "jinja"
+    },
+    "icons/ransomware": {
+        "prefix": [
+            "icons/ransomware"
+        ],
+        "body": [
+            "{% include \"./components/icons/ransomware.html.jinja\" %}"
+        ],
+        "scope": "jinja"
+    },
+    "icons/settings": {
+        "prefix": [
+            "icons/settings"
+        ],
+        "body": [
+            "{% include \"./components/icons/settings.html.jinja\" %}"
+        ],
+        "scope": "jinja"
+    },
+    "icons/trojan": {
+        "prefix": [
+            "icons/trojan"
+        ],
+        "body": [
+            "{% include \"./components/icons/trojan.html.jinja\" %}"
+        ],
+        "scope": "jinja"
+    },
+    "icons/trust zone": {
+        "prefix": [
+            "icons/trust zone"
+        ],
+        "body": [
+            "{% include \"./components/icons/trust zone.html.jinja\" %}"
+        ],
+        "scope": "jinja"
+    }
+}
