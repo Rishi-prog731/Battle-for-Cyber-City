@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Sora&display=swap');
+
+:root {
+    --black: #0C120C;
+    --blue: #016FB9;
+    --green: #5AFF15;
+    --red: #C20114;
+    --white: #ECEBF3;
+}
+
+h1 {
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 72px;
+}
+
+h2 {
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 48px;
+
+}
+
+body {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+}

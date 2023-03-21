@@ -1,0 +1,23 @@
+<!--Favicon-->
+<link rel="shortcut icon" href="" type="image/x-icon">
+
+<!--Apple Stuff-->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+<!--Android Stuff-->
+<meta name="mobile-web-app-capable" content="yes">
+
+<!--CSS-->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style_guide.css') }}" type="text/css" />
+
+<!--JS-->
+<script>
+    const socket = new WebSocket( 'ws://' + location.host + '/{{ title }}' );
+</script>
+<script src=""></script>
+
+<!--Title-->
+<title>
+    {{ title }}
+</title>

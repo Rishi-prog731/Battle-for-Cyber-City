@@ -6,10 +6,10 @@ sock = Sock(app)
 
 @app.get('/')
 def default():
-    return render_template('default.html.jinja')
+    return render_template('default.html.jinja', title='Default')
 
-@sock.route('/')
-def ws(ws):
+@sock.route('/<route>')
+def ws(ws, route):
     while True:
         message = ws.receive()
         ws.send(message)
