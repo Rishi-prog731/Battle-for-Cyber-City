@@ -14,6 +14,16 @@
 <!--JS-->
 <script>
     const socket = new WebSocket( 'ws://' + location.host + '/{{ title }}' );
+
+    socket.onmessage = async ( event ) =>
+    {
+        console.log( event.data );
+    };
+
+    socket.onopen = async ( event ) =>
+    {
+        socket.send( '{{title}}' );
+    }
 </script>
 <script src=""></script>
 
