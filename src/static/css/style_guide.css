@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&family=Sora&display=swap');
 
 :root {
-    --black: #0C120C;
-    --blue: #016FB9;
-    --green: #5AFF15;
-    --red: #C20114;
-    --white: #ECEBF3;
+    --black: #09121B;
+    --white: #E8F1F2;
+    --red: #C40179;
+    --ultra-violet: #504180;
+    --green: #4DAA57;
+    
 }
 
 h1 {
