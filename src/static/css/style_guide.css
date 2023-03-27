@@ -50,4 +50,30 @@ button:active {
 
 .panel {
     background: #868686;
+    padding: 10px;
+
+    border-radius: 10px;
+
+    overflow-y: scroll;
+}
+
+/* width */
+.panel::-webkit-scrollbar {
+    background-color: #ffffff;
+}
+
+/* Track */
+.panel::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+/* Handle */
+.panel::-webkit-scrollbar-thumb {
+    background-color: black;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+.panel::-webkit-scrollbar-thumb:hover {
+    background: #b30000;
 }
