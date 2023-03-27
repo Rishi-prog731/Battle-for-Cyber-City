@@ -32,4 +32,22 @@ body {
     font-weight: 400;
     font-size: 24px;
     line-height: 36px;
+
+    padding: 0;
+        margin: 0;
+}
+
+button {
+
+}
+
+button:hover {
+}
+
+button:active {
+
+}
+
+.panel {
+    background: #868686;
 }
