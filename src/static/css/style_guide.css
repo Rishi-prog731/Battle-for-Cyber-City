@@ -32,48 +32,42 @@ body {
     font-weight: 400;
     font-size: 24px;
     line-height: 36px;
-
-    padding: 0;
-        margin: 0;
 }
 
 button {
+    background-color: var(--green);
+    color: var(--white);
 
+    border: none;
+    border-radius: 1rem;
+
+    padding: 1rem 2rem;
+    width: 100%;
+
+    box-shadow: 0 4px #000;
+
+    font-size: medium;
 }
 
 button:hover {
 }
 
 button:active {
+    box-shadow: 0 0px #000;
 
+    transform: translateY(4px);
 }
 
-.panel {
-    background: #868686;
-    padding: 10px;
-
-    border-radius: 10px;
-
-    overflow-y: scroll;
+.selection input {
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
-/* width */
-.panel::-webkit-scrollbar {
-    background-color: #ffffff;
+.selection>input:checked+span {
+    border: 1px solid var(--ultra-violet);
+    border-radius: 1rem;
 }
 
-/* Track */
-.panel::-webkit-scrollbar-track {
-    border-radius: 10px;
-}
-
-/* Handle */
-.panel::-webkit-scrollbar-thumb {
-    background-color: black;
-    border-radius: 10px;
-}
-
-/* Handle on hover */
-.panel::-webkit-scrollbar-thumb:hover {
-    background: #b30000;
+.selection>span {
 }
