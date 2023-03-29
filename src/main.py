@@ -1,6 +1,12 @@
 from flask import Flask, render_template
 from flask_sock import Sock
 
+from python.modbus import Modbus
+modbus = Modbus()
+modbus.connect()
+
+modbus.disconnect()
+
 app = Flask(__name__)
 sock = Sock(app)
 
