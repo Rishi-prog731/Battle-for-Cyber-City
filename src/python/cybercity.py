@@ -1,6 +1,3 @@
-import array
-from dis import dis
-
 class CyberCity:
     def __init__(self):
         districts = []
