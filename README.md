@@ -22,9 +22,9 @@ Cyber City stradegy game for [SAMSAT](https://www.samsat.org/)
 
 ## The Team
 
-* Backend Developer 💻 `Benjamin Bowles`
-* Frontend Developer 💻 `??`
-* Designer 🎨 `Roland Catapia`
+* Lead Developer 💻 `Benjamin Bowles`
+* Developer 💻 `??`
+* Lead Designer 🎨 `Roland Catapia`
 
 ## PLC Mappings
 
