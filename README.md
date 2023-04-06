@@ -10,6 +10,14 @@ Cyber City stradegy game for [SAMSAT](https://www.samsat.org/)
     - [Police/Fire (10.10.10.3)](#policefire-1010103)
     - [Traffic (10.10.10.4)](#traffic-1010104)
   - [Design](#design)
+  
+## Instructions
+
+* The src directory stores all the development files.
+* create a python virtual environment in the src folder
+* install requirements.txt
+* if you install a package add it to requirements.txt
+* make sure you keep the files organized and follow standard coding conventions
 
 ## The Team
 
