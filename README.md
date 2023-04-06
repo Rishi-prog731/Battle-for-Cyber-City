@@ -3,6 +3,7 @@
 Cyber City stradegy game for [SAMSAT](https://www.samsat.org/)
 
 - [Battle-for-Cyber-City](#battle-for-cyber-city)
+  - [Instructions](#instructions)
   - [The Team](#the-team)
   - [PLC Mappings](#plc-mappings)
     - [Power (10.10.10.1)](#power-1010101)
