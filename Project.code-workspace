@@ -12,13 +12,6 @@
     "files.exclude": {
       "**/src": false
     },
-    "files.associations": {
-      "*.jinja": "html"
-    },
-
-    "python.analysis.autoImportCompletions": true,
-    "python.analysis.autoSearchPaths": true,
-    "python.analysis.typeCheckingMode": "basic"
   },
   "tasks": {
     "version": "2.0.0",
