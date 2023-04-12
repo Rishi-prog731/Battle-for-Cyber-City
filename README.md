@@ -23,7 +23,7 @@ Cyber City stradegy game for [SAMSAT](https://www.samsat.org/)
 ## The Team
 
 * Lead Developer 💻 `Benjamin Bowles`
-* Developer 💻 `??`
+* Developer 💻 `Hariharaprasad Natarajamani`
 * Lead Designer 🎨 `Roland Catapia`
 
 ## PLC Mappings
