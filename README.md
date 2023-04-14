@@ -3,7 +3,8 @@
 Cyber City stradegy game for [SAMSAT](https://www.samsat.org/)
 
 - [Battle-for-Cyber-City](#battle-for-cyber-city)
-  - [Instructions](#instructions)
+  - [Folder Stucture](#folder-structure)
+  - [Instructions for Development](#instructions-for-development)
   - [The Team](#the-team)
   - [PLC Mappings](#plc-mappings)
     - [Power (10.10.10.1)](#power-1010101)
@@ -11,20 +12,25 @@ Cyber City stradegy game for [SAMSAT](https://www.samsat.org/)
     - [Police/Fire (10.10.10.3)](#policefire-1010103)
     - [Traffic (10.10.10.4)](#traffic-1010104)
   - [Design](#design)
-  
-## Instructions
 
-* The src directory stores all the development files.
-* create a python virtual environment in the src folder
-* install requirements.txt
-* if you install a package add it to requirements.txt
+## Folder Structure
+
+* The `src` directory stores all the development files.
+* The `doc` directory stores all the documentation files.
+
+## Instructions for Development
+
+* create a python virtual environment in the `src` folder
+* use pip to install requirements.txt
+* if you install a package add it to requirements.txt by using pip freeze into the file
 * make sure you keep the files organized and follow standard coding conventions
+* don't work on the main branch, create a development branch for you and make pull requests
 
 ## The Team
 
-* Lead Developer 💻 `Benjamin Bowles`
-* Developer 💻 `Hariharaprasad Natarajamani`
-* Lead Designer 🎨 `Roland Catapia`
+* Lead Developer 💻 `Benjamin`
+* Game Developer 💻 `Rishi`
+* Lead Designer 🎨 `Roland`
 
 ## PLC Mappings
 
