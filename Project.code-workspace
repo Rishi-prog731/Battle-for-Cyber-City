@@ -13,6 +13,7 @@
       "**/src": false
     },
     "python.terminal.activateEnvironment": true,
+    "python.analysis.typeCheckingMode": "basic"
   },
   "tasks": {
     "version": "2.0.0",
