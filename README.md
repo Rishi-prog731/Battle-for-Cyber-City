@@ -28,8 +28,8 @@ Cyber City stradegy game for [SAMSAT](https://www.samsat.org/)
 
 ## The Team
 
-* Lead Developer 💻 `Benjamin`
-* Game Developer 💻 `Rishi`
+* Lead Developer 💻 `Benjamin` [@HoleInOneGolfer](https://www.github.com/HoleInOneGolfer)
+* Game Developer 💻 `Rishi` [@rishih](https://www.github.com/Rishi-prog731)
 * Lead Designer 🎨 `Roland`
 
 ## PLC Mappings
@@ -70,4 +70,6 @@ Cyber City stradegy game for [SAMSAT](https://www.samsat.org/)
 | 5    | Red Light EW    |
 
 ## Design
-[Figma.com](https://www.figma.com/file/mn40OqTiIRspf0wprOv92w/Cyber-City-Range?node-id=0%3A1&t=ArfQfiEURLy880xD-1)
+UX: [Figma.com](https://www.figma.com/file/mn40OqTiIRspf0wprOv92w/Cyber-City-Range?node-id=0%3A1&t=ArfQfiEURLy880xD-1)
+
+Game: [Google Sheet](https://docs.google.com/spreadsheets/d/1fAyjl4c2pVBRPMtv6dN021eSeIyQtpjlF3AOrqUOK1o/edit)
