@@ -27,7 +27,15 @@
         "program": "${file}",
         "console": "integratedTerminal",
         "justMyCode": true
-      }
+      },
+      {
+        "name": "Python: Main File",
+        "type": "python",
+        "request": "launch",
+        "program": "${workspaceFolder:Source}/main.py",
+        "console": "integratedTerminal",
+        "justMyCode": true
+      },
     ],
     "compounds": []
   }
