@@ -21,7 +21,8 @@
 
 ## Instructions for Development
 
-- Create a virtual environment using `python -m venv .venv`
+- Create a virtual environment in `src` using `python -m venv .venv`
+- `cd` into `src`
 - Activate the virtual environment using `.venv\Scripts\activate` or `.venv/bin/activate`
 - Install the dependencies using `pip install -r requirements.txt`
 
