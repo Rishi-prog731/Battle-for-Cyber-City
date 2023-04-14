@@ -12,13 +12,23 @@
     "files.exclude": {
       "**/src": false
     },
+    "python.terminal.activateEnvironment": true,
   },
   "tasks": {
     "version": "2.0.0",
     "tasks": []
   },
   "launch": {
-    "configurations": [],
+    "configurations": [
+      {
+        "name": "Python: Current File",
+        "type": "python",
+        "request": "launch",
+        "program": "${file}",
+        "console": "integratedTerminal",
+        "justMyCode": true
+      }
+    ],
     "compounds": []
   }
 }
