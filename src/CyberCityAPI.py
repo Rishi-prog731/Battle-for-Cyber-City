@@ -1,81 +1,64 @@
-class CyberCity():
-    def __init__(self):
-        self.districts = []
-
-    def __str__(self):
-        out = 'CyberCity\n'
-
-        for i in self.districts:
-            out += f'\t{str(i)}\n'
-        
-        return out
-
-class District():
-    def __init__(self, name, generator=False, trafficLight=False, trafficLightCount=0):
-        self.name = name
-        self.power = Power(generator)
-        if trafficLight:
-            self.trafficLight = []
-            for i in range(trafficLightCount):
-                self.trafficLight.append(TrafficLight(i))
-
-    def __str__(self):
-        out = f'{self.name}\n\t\t{str(self.power)}'
-        if hasattr(self, 'trafficLight'):
-            for i in self.trafficLight:
-                out += f'\n\t\t{str(i)} '
-        return out
-
-class Power():
-    def __init__(self, hasGenerator=False):
-        self.on = True
-        if hasGenerator:
-            self.generator = False
-    
-    def __str__(self):
-        out = f'Power: {"⚡" if self.on else "⚠ "}'
-        if hasattr(self, 'generator'):
-            out += f'  Generator: {"⚡" if self.generator else "⚠ "}'
-        return out
-    
-    def PowerOn(self):
-        self.on = True
-    
-    def PowerOff(self):
-        self.on = False
-
-    def GeneratorOn(self):
-        if hasattr(self, 'generator'):
-            self.generator = True
-    
-    def GeneratorOff(self):
-        if hasattr(self, 'generator'):
-            self.generator = False
+from typing import List
+from pymodbus.client import ModbusTcpClient as ModbusClient
 
 class TrafficLight():
-    def __init__(self, name=0):
+    HOST = '127.0.0.1' # Modbus Server's IP
+    PORT = 502 # Modbus Server's Port
+    client = ModbusClient(HOST, PORT) # Modbus Client
+
+    def __init__(self, name: str, coilGreen: int):
         self.name = name
-        self.red = 0
-        self.yellow = 0
-        self.green = 0
+        self.coilGreen = coilGreen
 
-        self.RedLight()
+        self.RED = False
+        self.YELLOW = False
+        self.GREEN = False
 
-    def __str__(self):
-        out = f'{self.name}: {"🔴" if self.red else "⚫"}{"🟡" if self.yellow else "⚫"}{"🟢" if self.green else "⚫"}'
-        return out
+    def toRed(self):
+        self.RED = True
+        self.YELLOW = False
+        self.GREEN = False
+    def isRed(self) -> bool:
+        return self.RED
 
-    def RedLight(self):
-        self.red = 1
-        self.yellow = 0
-        self.green = 0
+    def toYellow(self):
+        self.RED = False
+        self.YELLOW = True
+        self.GREEN = False
+    def isYellow(self) -> bool:
+        return self.YELLOW
 
-    def YellowLight(self):
-        self.red = 0
-        self.yellow = 1
-        self.green = 0
+    def toGreen(self):
+        self.RED = False
+        self.YELLOW = False
+        self.GREEN = True
+    def isGreen(self) -> bool:
+        return self.GREEN
 
-    def GreenLight(self):
-        self.red = 0
-        self.yellow = 0
-        self.green = 1
+    def allOff(self):
+        self.RED = False
+        self.YELLOW = False
+        self.GREEN = False
+    def isOff(self) -> bool:
+        return not self.RED and not self.YELLOW and not self.GREEN
+
+    def allOn(self):
+        self.RED = True
+        self.YELLOW = True
+        self.GREEN = True
+    def isOn(self) -> bool:
+        return self.RED and self.YELLOW and self.GREEN
+
+    def write(self):
+        if TrafficLight.client.connect():
+            self.client.write_coils(self.coilGreen, [self.GREEN, self.YELLOW, self.RED])
+            self.client.close()
+    def writeList(self, list: List[bool]):
+        if TrafficLight.client.connect():
+            self.client.write_coils(self.coilGreen, list)
+            self.client.close()
+    def read(self):
+        if TrafficLight.client.connect():
+            result = self.client.read_coils(self.coilGreen, 3)
+            self.client.close()
+            return result.bits[:3]

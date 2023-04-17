@@ -1,12 +1,7 @@
-import CyberCityAPI as c
+import CyberCityAPI
+import time
 
-city = c.CyberCity()
+a = CyberCityAPI.TrafficLight("test", 0)
 
-city.districts.append(c.District('Business'))
-city.districts.append(c.District('Hospital', True))
-city.districts.append(c.District('Police/Fire', True, True, 2))
-city.districts.append(c.District('Industrial'))
-city.districts.append(c.District('Univesity'))
-city.districts.append(c.District('Residential'))
 
-print(city)
+a.write()
