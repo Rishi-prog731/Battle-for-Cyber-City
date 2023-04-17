@@ -1,7 +1,11 @@
 import CyberCityAPI
 import time
 
-a = CyberCityAPI.TrafficLight("test", 0)
+NS = CyberCityAPI.TrafficLight("North-South", 0)
+EW = CyberCityAPI.TrafficLight("East-West", 3)
 
+NS.toGreen()
+EW.toRed()
 
-a.write()
+NS.write()
+EW.write()
