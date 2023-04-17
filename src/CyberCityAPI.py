@@ -2,9 +2,9 @@ from typing import List
 from pymodbus.client import ModbusTcpClient as ModbusClient
 
 class TrafficLight():
-    HOST = '127.0.0.1' # Modbus Server's IP
-    PORT = 502 # Modbus Server's Port
-    client = ModbusClient(HOST, PORT) # Modbus Client
+    HOST = '127.0.0.1' 
+    PORT = 502 
+    client = ModbusClient(HOST, PORT) 
 
     def __init__(self, name: str, coilGreen: int):
         self.name = name
@@ -57,7 +57,7 @@ class TrafficLight():
         if TrafficLight.client.connect():
             self.client.write_coils(self.coilGreen, list)
             self.client.close()
-    def read(self):
+    def read(self) -> List[bool] | None:
         if TrafficLight.client.connect():
             result = self.client.read_coils(self.coilGreen, 3)
             self.client.close()
