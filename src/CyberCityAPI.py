@@ -93,6 +93,9 @@ class Power():
 
         self.gridConnection = True
 
+    def __str__(self):
+        return f'Grid Connection: {self.gridConnection}'
+
     def gridConnectionOff(self):
         self.gridConnection = False
     
