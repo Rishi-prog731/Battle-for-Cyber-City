@@ -1,4 +1,4 @@
-import CyberCityAPI as city
+import CyberCity as city
 import time
 
 # Actual Traffic Light Objects with Mappings
