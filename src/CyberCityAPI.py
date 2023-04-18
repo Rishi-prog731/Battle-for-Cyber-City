@@ -14,6 +14,9 @@ class TrafficLight():
         self.YELLOW = False
         self.GREEN = False
 
+    def __str__(self):
+        return f'Red: {self.RED} Yellow: {self.YELLOW} Green: {self.GREEN}'
+
     def toRed(self):
         self.RED = True
         self.YELLOW = False
