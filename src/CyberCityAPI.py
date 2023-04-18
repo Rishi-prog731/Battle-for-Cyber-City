@@ -62,3 +62,44 @@ class TrafficLight():
             result = self.client.read_coils(self.coilGreen, 3)
             self.client.close()
             return result.bits[:3]
+
+class Power():
+    HOST = '127.0.0.1'
+    PORT = 502
+    client = ModbusClient(HOST, PORT)
+
+    mainGrid = True
+
+    @staticmethod
+    def mainGridOff():
+        Power.mainGrid = False
+
+    @staticmethod
+    def mainGridOn():
+        Power.mainGrid = True
+
+    def __init__(self, name: str, gridConnectionCoil: int):
+        self.name = name
+        self.gridConnectionCoil = gridConnectionCoil
+
+        self.gridConnection = True
+
+    def gridConnectionOff(self):
+        self.gridConnection = False
+    
+    def gridConnectionOn(self):
+        self.gridConnection = True
+
+    def write(self):
+        if Power.client.connect():
+            if Power.mainGrid:
+                self.client.write_coil(self.gridConnectionCoil, self.gridConnection)
+            else:
+                self.client.write_coil(self.gridConnectionCoil, False)
+            self.client.close()
+
+    def read(self) -> bool | None:
+        if Power.client.connect():
+            result = self.client.read_coils(self.gridConnectionCoil, 1)
+            self.client.close()
+            return result.bits[0]
