@@ -9,3 +9,10 @@ EW.toRed()
 
 NS.write()
 EW.write()
+
+print(NS)
+print(EW)
+
+P = CyberCityAPI.Power("Power", 6)
+
+print(P)

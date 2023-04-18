@@ -15,7 +15,7 @@ class TrafficLight():
         self.GREEN = False
 
     def __str__(self):
-        return f'Red: {self.RED} Yellow: {self.YELLOW} Green: {self.GREEN}'
+        return f'{self.name} | {"🔴" if self.RED else "⚫"} {"🟡" if self.YELLOW else "⚫"} {"🟢" if self.GREEN else "⚫"}'
 
     def toRed(self):
         self.RED = True
@@ -94,7 +94,7 @@ class Power():
         self.gridConnection = True
 
     def __str__(self):
-        return f'Grid Connection: {self.gridConnection}'
+        return f'{self.name} | {"⚡" if self.gridConnection else "⚫"}'
 
     def gridConnectionOff(self):
         self.gridConnection = False
