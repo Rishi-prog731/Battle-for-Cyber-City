@@ -53,15 +53,21 @@ class TrafficLight():
         if TrafficLight.client.connect():
             self.client.write_coils(self.coilGreen, [self.GREEN, self.YELLOW, self.RED])
             self.client.close()
+        else:
+            return
     def writeList(self, list: List[bool]):
         if TrafficLight.client.connect():
             self.client.write_coils(self.coilGreen, list)
             self.client.close()
-    def read(self) -> List[bool] | None:
+        else:
+            return
+    def read(self) -> List[bool]:
         if TrafficLight.client.connect():
             result = self.client.read_coils(self.coilGreen, 3)
             self.client.close()
             return result.bits[:3]
+        else:
+            return
 
 class Power():
     HOST = '127.0.0.1'
@@ -97,9 +103,13 @@ class Power():
             else:
                 self.client.write_coil(self.gridConnectionCoil, False)
             self.client.close()
+        else:
+            return
 
-    def read(self) -> bool | None:
+    def read(self) -> bool:
         if Power.client.connect():
             result = self.client.read_coils(self.gridConnectionCoil, 1)
             self.client.close()
             return result.bits[0]
+        else:
+            return
