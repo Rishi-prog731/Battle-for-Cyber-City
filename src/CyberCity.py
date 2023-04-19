@@ -22,21 +22,21 @@ class TrafficLight():
         self.YELLOW = False
         self.GREEN = False
     def isRed(self) -> bool:
-        return self.RED
+        return self.RED and not self.YELLOW and not self.GREEN
 
     def toYellow(self):
         self.RED = False
         self.YELLOW = True
         self.GREEN = False
     def isYellow(self) -> bool:
-        return self.YELLOW
+        return self.YELLOW and not self.RED and not self.GREEN
 
     def toGreen(self):
         self.RED = False
         self.YELLOW = False
         self.GREEN = True
     def isGreen(self) -> bool:
-        return self.GREEN
+        return self.GREEN and not self.RED and not self.YELLOW
 
     def allOff(self):
         self.RED = False
