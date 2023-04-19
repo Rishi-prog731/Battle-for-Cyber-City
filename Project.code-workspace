@@ -1,6 +1,7 @@
 {
   "folders": [
     {
+      "name": "Project",
       "path": "."
     },
     {
@@ -10,10 +11,10 @@
   ],
   "settings": {
     "files.exclude": {
-      "**/src": false
+      "**/src": false,
+      "**/__pycache__": true
     },
     "python.terminal.activateEnvironment": true,
-    "python.analysis.typeCheckingMode": "basic",
     "python.globalModuleInstallation": false,
   },
   "tasks": {
@@ -23,14 +24,6 @@
   "launch": {
     "configurations": [
       {
-        "name": "Python: Current File",
-        "type": "python",
-        "request": "launch",
-        "program": "${file}",
-        "console": "integratedTerminal",
-        "justMyCode": true
-      },
-      {
         "name": "Python: Main File",
         "type": "python",
         "request": "launch",
@@ -38,6 +31,14 @@
         "console": "integratedTerminal",
         "justMyCode": true
       },
+      {
+        "name": "Python: Current File",
+        "type": "python",
+        "request": "launch",
+        "program": "${file}",
+        "console": "integratedTerminal",
+        "justMyCode": true
+      }
     ],
     "compounds": []
   }
