@@ -4,8 +4,10 @@ from CyberCity.CyberCity import *
 NS = TrafficLight("North-South", 0)
 EW = TrafficLight("East-West", 3)
 
-print(NS)
-print(EW)
+TRAFFICLIGHTS = [NS, EW]
+
+for a in TRAFFICLIGHTS:
+    print(a)
 
 # Actual City Distrcit Objects with Mappings
 BUSINESS = District("Business", 0)
@@ -15,9 +17,7 @@ INDUSTRIAL = District("Industrial", 3)
 UNIVERSITY = District("University", 4)
 RESIDENTIAL = District("Residential", 5)
 
-print(BUSINESS)
-print(HOSPITAL)
-print(POLICE_FIRE)
-print(INDUSTRIAL)
-print(UNIVERSITY)
-print(RESIDENTIAL)
+DISTRICTS = [BUSINESS, HOSPITAL, POLICE_FIRE, INDUSTRIAL, UNIVERSITY, RESIDENTIAL]
+
+for a in DISTRICTS:
+    print(a)

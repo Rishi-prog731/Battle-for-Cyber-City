@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cybercity Display</title>
+</head>
+<body>
+    <h1>Cybercity Display</h1>
+    <p>Defender's turn:</p>
+    <form method="POST" action="/play">
+        <label for="locationToDefend">Location to defend:</label>
+        <select name="locationToDefend" id="locationToDefend">
+            {% for location in locations %}
+            <option value="{{ location }}">{{ location }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Defend</button>
+    </form>
+</body>
+</html>
