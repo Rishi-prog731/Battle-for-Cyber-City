@@ -7,7 +7,7 @@ class SpecialDistrict(District):
     """
     Special District Object
     """
-    
+
     def __init__(self, name: str, globalPowerCoil: int, host: str, port: int, startCoil: int = 0):
         """
         Initialize a special district.

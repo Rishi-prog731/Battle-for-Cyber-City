@@ -11,29 +11,28 @@ class TrafficLight():
     """ Port of the Modbus Server """
     client = ModbusClient(HOST, PORT)
     """ Modbus Client """
-    
+
     @staticmethod
-    def setHost(host: str):
+    def set_host(host: str):
         """
         Set the IP Address of the Modbus Server
         Args:
             host (str): IP Address of the Modbus Server
         """
         TrafficLight.HOST = host
-        
+
         TrafficLight.client = ModbusClient(TrafficLight.HOST, TrafficLight.PORT)
     @staticmethod
-    def setPort(port: int):
+    def set_port(port: int):
         """
         Set the Port of the Modbus Server
         Args:
             port (int): Port of the Modbus Server
         """
         TrafficLight.PORT = port
-        
         TrafficLight.client = ModbusClient(TrafficLight.HOST, TrafficLight.PORT)
 
-    def __init__(self, name: str, startCoil: int):
+    def __init__(self, name: str, start_coil: int):
         """
         Initialize a Traffic Light Object
         Args:
@@ -42,14 +41,14 @@ class TrafficLight():
         """
         self.name: str = name
         """ Name of the Traffic Light """
-        self.startCoil: int = startCoil
+        self.start_coil: int = start_coil
         """ Modbus coil address for GREEN Light, YELLOW is +1, RED is +2 """
 
-        self.RED = False
+        self.red = False
         """ RED Light state """
-        self.YELLOW = False
+        self.yellow = False
         """ YELLOW Light state """
-        self.GREEN = False
+        self.green = False
         """ GREEN Light state """
 
     def __str__(self) -> str:
@@ -62,89 +61,89 @@ class TrafficLight():
         ⚫🟡⚫ for YELLOW
         🟢⚫⚫ for GREEN
         """
-        return f'{"🔴" if self.RED else "⚫"} {"🟡" if self.YELLOW else "⚫"} {"🟢" if self.GREEN else "⚫"}'
+        return f'{"🔴" if self.red else "⚫"} {"🟡" if self.yellow else "⚫"} {"🟢" if self.green else "⚫"}'
 
-    def toRed(self):
+    def to_red(self):
         """
         Set the light to RED
         """
-        self.RED = True
-        self.YELLOW = False
-        self.GREEN = False
-    def isRed(self) -> bool:
+        self.red = True
+        self.yellow = False
+        self.green = False
+    def is_red(self) -> bool:
         """
         Check if the light is RED
         Returns:
             bool: True if RED, False if not
         """
-        return self.RED and not self.YELLOW and not self.GREEN
+        return self.red and not self.yellow and not self.green
 
-    def toYellow(self):
+    def to_yellow(self):
         """
         Set the light to YELLOW
         """
-        self.RED = False
-        self.YELLOW = True
-        self.GREEN = False
-    def isYellow(self) -> bool:
+        self.red = False
+        self.yellow = True
+        self.green = False
+    def is_yellow(self) -> bool:
         """
         Check if the light is YELLOW
         Returns:
             bool: True if YELLOW, False if not
         """
-        return self.YELLOW and not self.RED and not self.GREEN
+        return self.yellow and not self.red and not self.green
 
-    def toGreen(self):
+    def to_green(self):
         """
         Set the light to GREEN
         """
-        self.RED = False
-        self.YELLOW = False
-        self.GREEN = True
-    def isGreen(self) -> bool:
+        self.red = False
+        self.yellow = False
+        self.green = True
+    def is_green(self) -> bool:
         """
         Check if the light is GREEN
         Returns:
             bool: True if GREEN, False if not
         """
-        return self.GREEN and not self.RED and not self.YELLOW
+        return self.green and not self.red and not self.yellow
 
-    def allOff(self):
+    def all_off(self):
         """
         Set all lights to OFF
         """
-        self.RED = False
-        self.YELLOW = False
-        self.GREEN = False
-    def isOff(self) -> bool:
+        self.red = False
+        self.yellow = False
+        self.green = False
+    def is_off(self) -> bool:
         """
         Check if all lights are OFF
         Returns:
             bool: True if all lights are OFF, False if not
         """
-        return not self.RED and not self.YELLOW and not self.GREEN
+        return not self.red and not self.yellow and not self.green
 
-    def allOn(self):
+    def all_on(self):
         """
         Set all lights to ON
         """
-        self.RED = True
-        self.YELLOW = True
-        self.GREEN = True
-    def isOn(self) -> bool:
+        self.red = True
+        self.yellow = True
+        self.green = True
+    def is_on(self) -> bool:
         """
         Check if all lights are ON
         Returns:
             bool: True if all lights are ON, False if not
         """
-        return self.RED and self.YELLOW and self.GREEN
+        return self.red and self.yellow and self.green
 
     def write(self):
         """
         Write the current state of the Traffic Light to the Modbus Server
         """
         if TrafficLight.client.connect():
-            self.client.write_coils(self.startCoil, [self.GREEN, self.YELLOW, self.RED])
+            self.client.write_coils(self.start_coil, [self.green, self.yellow, self.red])
             self.client.close()
         else:
             return
@@ -155,7 +154,7 @@ class TrafficLight():
             List[bool]: List of the current state of the Traffic Light
         """
         if TrafficLight.client.connect():
-            result = self.client.read_coils(self.startCoil, 3)
+            result = self.client.read_coils(self.start_coil, 3)
             self.client.close()
             return result.bits[:3]
         else:
