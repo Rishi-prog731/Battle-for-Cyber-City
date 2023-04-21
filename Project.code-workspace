@@ -15,7 +15,8 @@
       "**/__pycache__": true
     },
     "python.terminal.activateEnvironment": true,
-    "python.globalModuleInstallation": false,
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "python.terminal.executeInFileDir": true
   },
   "tasks": {
     "version": "2.0.0",
@@ -24,18 +25,18 @@
   "launch": {
     "configurations": [
       {
-        "name": "Python: Main File",
-        "type": "python",
-        "request": "launch",
-        "program": "${workspaceFolder:Source}/main.py",
-        "console": "integratedTerminal",
-        "justMyCode": true
-      },
-      {
         "name": "Python: Current File",
         "type": "python",
         "request": "launch",
         "program": "${file}",
+        "console": "integratedTerminal",
+        "justMyCode": true
+      },
+      {
+        "name": "Python: Main File",
+        "type": "python",
+        "request": "launch",
+        "program": "${workspaceFolder:Source}/main.py",
         "console": "integratedTerminal",
         "justMyCode": true
       }

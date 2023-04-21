@@ -6,9 +6,6 @@ EW = TrafficLight("East-West", 3)
 
 TRAFFICLIGHTS = [NS, EW]
 
-for a in TRAFFICLIGHTS:
-    print(a)
-
 # Actual City Distrcit Objects with Mappings
 BUSINESS = District("Business", 0)
 HOSPITAL = SpecialDistrict("Hospital", 1, '127.0.0.1', 502)
@@ -18,6 +15,3 @@ UNIVERSITY = District("University", 4)
 RESIDENTIAL = District("Residential", 5)
 
 DISTRICTS = [BUSINESS, HOSPITAL, POLICE_FIRE, INDUSTRIAL, UNIVERSITY, RESIDENTIAL]
-
-for a in DISTRICTS:
-    print(a)
