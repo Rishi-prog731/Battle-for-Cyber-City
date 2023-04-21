@@ -120,13 +120,14 @@ class TrafficLight():
             return
     def read(self) -> List[bool]:
         """
-        Read the current state of the Traffic Light from the Modbus Server
+        Read the current state of the Traffic Light from the Modbus Server and update the Traffic Light
         Returns:
             List[bool]: Current state of the Traffic Light
         """
         if TrafficLight.CLIENT.connect():
             result = TrafficLight.CLIENT.read_coils(self.start_coil, 3)
             TrafficLight.CLIENT.close()
+            [self.green, self.yellow, self.red] = result.bits[:3]
             return result.bits[:3]
         else:
             return []
@@ -210,13 +211,14 @@ class Power():
             return
     def read(self) -> List[bool]:
         """
-        Read the current state of the Power from the Modbus Server
+        Read the current state of the Power from the Modbus Server and update the Power
         Returns:
             List[bool]: Current state of the Power
         """
         if Power.CLIENT.connect():
             result = Power.CLIENT.read_coils(self.start_coil, 1)
             Power.CLIENT.close()
+            [self.power] = result.bits[:1]
             return result.bits[:1]
         else:
             return []
@@ -319,13 +321,14 @@ class SpecialDistrict(District):
             return
     def read(self) -> List[bool]:
         """
-        Read the current state of the Special District from the Modbus Server
+        Read the current state of the Special District from the Modbus Server and update the Special District
         Returns:
             List[bool]: Current state of the Special District
         """
         if SpecialDistrict.CLIENT.connect():
             result = SpecialDistrict.CLIENT.read_coils(self.start_coil, 2)
             SpecialDistrict.CLIENT.close()
+            [self.special_power, self.special_generator] = result.bits[:2]
             return result.bits[:2]
         else:
             return []
