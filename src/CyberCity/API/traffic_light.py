@@ -61,7 +61,11 @@ class TrafficLight():
         ⚫🟡⚫ for YELLOW
         🟢⚫⚫ for GREEN
         """
-        return f'{"🔴" if self.red else "⚫"} {"🟡" if self.yellow else "⚫"} {"🟢" if self.green else "⚫"}'
+        out = ""
+        out += {"🔴" if self.red else "⚫"}
+        out += {"🟡" if self.yellow else "⚫"}
+        out += {"🟢" if self.green else "⚫"}
+        return out
 
     def to_red(self):
         """

@@ -1,3 +1,3 @@
-from .API import *
-from .Game import *
-from .Server import *
+from .api import *
+from .game import *
+from .server import *

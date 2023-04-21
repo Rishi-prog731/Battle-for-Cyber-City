@@ -1,7 +1,7 @@
 from typing import List
 from pymodbus.client import ModbusTcpClient as ModbusClient
 
-from .District import District
+from .district import District
 
 class SpecialDistrict(District):
     """

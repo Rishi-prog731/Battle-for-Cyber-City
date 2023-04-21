@@ -1,11 +1,10 @@
-from .Power import Power
+from .power import Power
 
 class District():
     """
     The District Object
     """
-    
-    def __init__(self, name: str, globalPowerCoil: int):
+    def __init__(self, name: str, global_power_coil: int):
         """
         Initializes the District object
         Args:
@@ -15,7 +14,7 @@ class District():
         self.name = name
         """ Name of the District """
 
-        self.globalPower = Power(self.name, globalPowerCoil)
+        self.global_power = Power(self.name, global_power_coil)
         """ Power Object """
 
     def __str__(self) -> str:
@@ -24,4 +23,4 @@ class District():
         Returns:
             str: State of the District
         """
-        return f'{self.name} => {self.globalPower} '
+        return f'{self.name} => {self.global_power} '
