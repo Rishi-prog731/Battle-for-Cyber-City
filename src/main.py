@@ -1,4 +1,4 @@
-from CyberCity.CyberCity import *
+from CyberCity import *
 
 # Actual Traffic Light Objects with Mappings
 NS = TrafficLight("North-South", 0)
