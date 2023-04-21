@@ -31,6 +31,9 @@ class TrafficLight():
     def __init__(self, name: str, start_coil: int) -> None:
         """
         Initialize a Traffic Light Object
+        Args:
+            name (str): Name of the Traffic Light
+            start_coil (int): Modbus coil address for GREEN Light, YELLOW is +1, RED is +2
         """
         self.name = name
         """ Name of the Traffic Light """
