@@ -10,6 +10,27 @@ class Power():
     """ Port of the Modbus Server """
     client = ModbusClient(HOST, PORT)
     """ Modbus Client """
+    
+    @staticmethod
+    def setHost(host: str):
+        """
+        Set the IP Address of the Modbus Server
+        Args:
+            host (str): IP Address of the Modbus Server
+        """
+        Power.HOST = host
+        
+        Power.client = ModbusClient(Power.HOST, Power.PORT)
+    @staticmethod
+    def setPort(port: int):
+        """
+        Set the Port of the Modbus Server
+        Args:
+            port (int): Port of the Modbus Server
+        """
+        Power.PORT = port
+        
+        Power.client = ModbusClient(Power.HOST, Power.PORT)
 
     mainGrid = True
     """ Main Grid Status """

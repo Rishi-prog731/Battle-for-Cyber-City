@@ -11,6 +11,27 @@ class TrafficLight():
     """ Port of the Modbus Server """
     client = ModbusClient(HOST, PORT)
     """ Modbus Client """
+    
+    @staticmethod
+    def setHost(host: str):
+        """
+        Set the IP Address of the Modbus Server
+        Args:
+            host (str): IP Address of the Modbus Server
+        """
+        TrafficLight.HOST = host
+        
+        TrafficLight.client = ModbusClient(TrafficLight.HOST, TrafficLight.PORT)
+    @staticmethod
+    def setPort(port: int):
+        """
+        Set the Port of the Modbus Server
+        Args:
+            port (int): Port of the Modbus Server
+        """
+        TrafficLight.PORT = port
+        
+        TrafficLight.client = ModbusClient(TrafficLight.HOST, TrafficLight.PORT)
 
     def __init__(self, name: str, startCoil: int):
         """
