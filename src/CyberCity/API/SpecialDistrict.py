@@ -5,7 +5,7 @@ from .District import District
 
 class SpecialDistrict(District):
     """
-    A special district is a district that has special features.
+    Special District Object
     """
     
     def __init__(self, name: str, globalPowerCoil: int, host: str, port: int, startCoil: int = 0):
