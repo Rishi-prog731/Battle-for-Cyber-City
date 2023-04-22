@@ -16,7 +16,10 @@
     },
     "python.terminal.activateEnvironment": true,
     "python.terminal.activateEnvInCurrentTerminal": true,
-    "python.terminal.executeInFileDir": true
+    "python.terminal.executeInFileDir": true,
+    "editor.rulers": [
+      80
+    ]
   },
   "tasks": {
     "version": "2.0.0",
