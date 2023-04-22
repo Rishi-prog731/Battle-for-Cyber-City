@@ -1,6 +1,5 @@
-""" A single light from a traffic light """
 class Light():
-    """ A single light from a traffic light """
+    """ The light class. """
     def __init__(self, coil: int) -> None:
         self.__coil: int = coil
         """ The coil address number of the light """
