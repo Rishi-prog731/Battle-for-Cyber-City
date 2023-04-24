@@ -13,7 +13,7 @@ class System():
         Returns:
             str: The string representation of the System
         """
-        return f"{self.coil}: {'✅' if self.state else '☑️'}\t"
+        return f"{self.coil}: {'✔' if self.state else '❌'}\t"
     @property
     def coil(self) -> int:
         """
@@ -21,9 +21,3 @@ class System():
             int: The coil address number of the system
         """
         return self.__coil
-    def enable(self) -> None:
-        """ Turns on the System """
-        self.state = True
-    def disable(self) -> None:
-        """ Turns off the System """
-        self.state = False

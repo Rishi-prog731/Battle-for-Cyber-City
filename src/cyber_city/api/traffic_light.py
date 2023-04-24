@@ -8,6 +8,7 @@ from .system import System
 
 class TrafficLight():
     """ The traffic light class."""
+
     class States():
         """
         Enum for states that the traffic light can have
@@ -19,6 +20,7 @@ class TrafficLight():
         GREEN_LIGHT = [False, False, True]
         ALL_OFF = [False, False, False]
         ALL_ON = [True, True, True]
+
     def __init__(self, red_light: System, yellow_light: System,
                 green_light: System, host: str = '127.0.0.1', port: int = 502
                 ) -> None:
@@ -38,7 +40,7 @@ class TrafficLight():
         """ Yellow Light System Object """
         self.green_light: System = green_light
         """ Green Light System Object """
-        self._state: List[bool] = TrafficLight.States.ALL_OFF
+        self.state = TrafficLight.States.ALL_OFF
         """ `State` of the lights """
         self._host = host
         """ The Modbus host `IP address`. """
@@ -90,37 +92,12 @@ class TrafficLight():
     def port(self, val: int) -> None:
         self._port = val
         self._client = ModbusClient(self._host, self._port)
-    @property
-    def state(self) -> List[bool]:
-        """
-        Get `State`
-
-        Returns:
-            List[bool]: `State` array of light
-        """
-        return self.state
-    @state.setter
-    def state(self, val: List[bool]) -> None:
-        if self._state:
-            self._state = val
-        else:
-            pass # self._state = TrafficLight.States.ALL_OFF
 
     def update(self) -> None:
         """ Updates the states of the lights with the current state. """
-        a = self.state
-        if a[0]:
-            self.red_light.enable()
-        else:
-            self.red_light.disable()
-        if a[1]:
-            self.yellow_light.enable()
-        else:
-            self.yellow_light.disable()
-        if a[2]:
-            self.green_light.enable()
-        else:
-            self.green_light.disable()
+        self.green_light.state = self.state[0]
+        self.yellow_light.state = self.state[1]
+        self.red_light.state = self.state[2]
     def write(self) -> None:
         """ Writes the states of the lights to the Modbus coils. """
         with self._client.connect():

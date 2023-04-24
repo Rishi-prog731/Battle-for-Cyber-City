@@ -14,10 +14,13 @@ print(G_NS, Y_NS, R_NS, G_EW, Y_EW, R_EW)
 NS = TrafficLight(R_NS, Y_NS, G_NS)
 EW = TrafficLight(R_EW, Y_EW, R_EW)
 
+NS.state = TrafficLight.States.ALL_ON
+NS.update()
+
 print(NS, EW)
 
 #NS.state = TrafficLight.States.ALL_ON
-NS.update()
+#NS.update()
 
 TRAFFICLIGHTS = [NS, EW]
 
