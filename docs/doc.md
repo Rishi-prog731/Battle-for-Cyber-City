@@ -2,14 +2,17 @@
 
 - [Documentation](#documentation)
   - [API](#api)
-    - [Light](#light)
+    - [System](#system)
     - [TrafficLight](#trafficlight)
+    - [PowerGrid](#powergrid)
   - [Game](#game)
 
 ## API
 
-### Light
+### System
 
 ### TrafficLight
+
+### PowerGrid
 
 ## Game

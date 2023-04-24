@@ -1,39 +1,13 @@
-"""
-The class for the traffic lights.
-"""
+""" The class for the traffic lights. """
 
 from typing import List
 
 from pymodbus.client import ModbusTcpClient as ModbusClient
 
-from .light import Light
+from .system import System
 
 class TrafficLight():
     """ The traffic light class."""
-    HOST = '127.0.0.1'
-    """ The Modbus host `IP address`. """
-    PORT = 502
-    """ The Modbus `port`. """
-    CLIENT = ModbusClient(HOST, PORT)
-    """ The ModBus `client`. """
-    @staticmethod
-    def set_host(val: str) -> None:
-        """
-        Sets the host `IP address` of the modbus client
-        Args:
-            val (str): `IP address`
-        """
-        TrafficLight.HOST = val
-        TrafficLight.CLIENT = ModbusClient(TrafficLight.HOST, TrafficLight.PORT)
-    @staticmethod
-    def set_port(val: int) -> None:
-        """
-        Sets the host `port` of the modbus client
-        Args:
-            val (int): `port`
-        """
-        TrafficLight.PORT = val
-        TrafficLight.CLIENT = ModbusClient(TrafficLight.HOST, TrafficLight.PORT)
     class States():
         """
         Enum for states that the traffic light can have
@@ -45,64 +19,125 @@ class TrafficLight():
         GREEN_LIGHT = [False, False, True]
         ALL_OFF = [False, False, False]
         ALL_ON = [True, True, True]
-    def __init__(self, red_light: Light, yellow_light: Light,
-                green_light: Light) -> None:
-        self.red_light: Light = red_light
-        self.yellow_light: Light = yellow_light
-        self.green_light: Light = green_light
-        self.state: List[bool] = TrafficLight.States.ALL_OFF
+    def __init__(self, red_light: System, yellow_light: System,
+                green_light: System, host: str = '127.0.0.1', port: int = 502
+                ) -> None:
+        """
+        Initialize a new Traffic Light.
+        
+        Args:
+            red_light (System): Red Light System Object
+            yellow_light (System): Yellow Light System Object
+            green_light (System): Green Light System Object
+            host (str): `IP address` of the Modbus Server
+            port (int): `Port` of the Modbus Server
+        """
+        self.red_light: System = red_light
+        """ Red Light System Object """
+        self.yellow_light: System = yellow_light
+        """ Yellow Light System Object """
+        self.green_light: System = green_light
+        """ Green Light System Object """
+        self._state: List[bool] = TrafficLight.States.ALL_OFF
+        """ `State` of the lights """
+        self._host = host
+        """ The Modbus host `IP address`. """
+        self._port = port
+        """ The Modbus `port`. """
+        self._client = ModbusClient(self._host, self._port)
+        """ The Modbus `client`. """
     def __str__(self) -> str:
         """
         Returns the current state of the `TrafficLight` as a `string`
+        ⚫⚫⚫: ALL_OFF
+        🟢🟡🔴: ALL_ON
+        ⚫⚫🔴: RED_LIGHT
+        ⚫🟡⚫: YELLOW_LIGHT
+        🟢⚫⚫: GREEN_LIGHT
+
         Returns:
             str: Current state of the Traffic Light
-        ⚫⚫⚫ for OFF
-        ⚫⚫🔴 for RED
-        ⚫🟡⚫ for YELLOW
-        🟢⚫⚫ for GREEN
         """
         out = ''
         out += '🟢' if self.green_light.state else '⚫'
         out += '🟡' if self.yellow_light.state else '⚫'
         out += '🔴' if self.red_light.state else '⚫'
         return out
-    @property.setter
+
+    @property
+    def host(self) -> str:
+        """
+        Get Host
+        
+        Returns:
+            str: host `IP address`
+        """
+        return self.host
+    @host.setter
+    def host(self, val: str) -> None:
+        self._host = val
+        self._client = ModbusClient(self._host, self._port)
+    @property
+    def port(self) -> int:
+        """
+        Get Port
+
+        Returns:
+            int: host `port`
+        """
+        return self.port
+    @port.setter
+    def port(self, val: int) -> None:
+        self._port = val
+        self._client = ModbusClient(self._host, self._port)
+    @property
+    def state(self) -> List[bool]:
+        """
+        Get `State`
+
+        Returns:
+            List[bool]: `State` array of light
+        """
+        return self.state
+    @state.setter
     def state(self, val: List[bool]) -> None:
-        if self.state:
-            self.state = val
+        if self._state:
+            self._state = val
         else:
-            self.state = TrafficLight.States.ALL_OFF
+            pass # self._state = TrafficLight.States.ALL_OFF
+
     def update(self) -> None:
         """ Updates the states of the lights with the current state. """
-        if self.state[0]:
+        a = self.state
+        if a[0]:
             self.red_light.enable()
         else:
             self.red_light.disable()
-        if self.state[1]:
+        if a[1]:
             self.yellow_light.enable()
         else:
             self.yellow_light.disable()
-        if self.state[2]:
+        if a[2]:
             self.green_light.enable()
         else:
             self.green_light.disable()
     def write(self) -> None:
         """ Writes the states of the lights to the Modbus coils. """
-        with TrafficLight.CLIENT.connect():
-            TrafficLight.CLIENT.write_coil(
+        with self._client.connect():
+            self._client.write_coil(
                 self.red_light.coil, self.red_light.state)
-            TrafficLight.CLIENT.write_coil(
+            self._client.write_coil(
                 self.yellow_light.coil, self.yellow_light.state)
-            TrafficLight.CLIENT.write_coil(
+            self._client.write_coil(
                 self.green_light.coil, self.green_light.state)
     def read(self) -> List[bool]:
         """ Reads the current state of the Modbus Coils """
         out = [False, False, False]
-        with TrafficLight.CLIENT.connect():
-            out[0] = TrafficLight.CLIENT.read_coils(
+        with self._client.connect():
+            out[0] = self._client.read_coils(
                 self.red_light.coil, 1).bits[0]
-            out[1] = TrafficLight.CLIENT.read_coils(
+            out[1] = self._client.read_coils(
                 self.yellow_light.coil, 1).bits[0]
-            out[2] = TrafficLight.CLIENT.read_coils(
+            out[2] = self._client.read_coils(
                 self.green_light.coil, 1).bits[0]
         return out
