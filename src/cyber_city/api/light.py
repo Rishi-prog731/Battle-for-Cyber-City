@@ -1,7 +1,6 @@
 """
 The class for the lights for the traffic lights.
 """
-
 class Light():
     """ The light class. """
     def __init__(self, coil: int) -> None:
@@ -22,13 +21,6 @@ class Light():
             int: The coil address number of the light
         """
         return self.__coil
-    @property
-    def state(self) -> bool:
-        """
-        Returns:
-            bool: The state of the light
-        """
-        return self.state
     def enable(self) -> None:
         """ Turns on the light """
         self.state = True
