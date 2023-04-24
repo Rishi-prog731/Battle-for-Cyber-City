@@ -1,5 +1,15 @@
-# API Docs
+# Documentation
 
-## Table of Contents
-- [API Docs](#api-docs)
-  - [Table of Contents](#table-of-contents)
+- [Documentation](#documentation)
+  - [API](#api)
+    - [Light](#light)
+    - [TrafficLight](#trafficlight)
+  - [Game](#game)
+
+## API
+
+### Light
+
+### TrafficLight
+
+## Game
