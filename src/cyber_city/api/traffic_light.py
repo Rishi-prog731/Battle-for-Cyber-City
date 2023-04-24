@@ -17,11 +17,21 @@ class TrafficLight():
     CLIENT = ModbusClient(HOST, PORT)
     """ The ModBus `client`. """
     @staticmethod
-    def set_host(val) -> None:
+    def set_host(val: str) -> None:
+        """
+        Sets the host `IP address` of the modbus client
+        Args:
+            val (str): `IP address`
+        """
         TrafficLight.HOST = val
         TrafficLight.CLIENT = ModbusClient(TrafficLight.HOST, TrafficLight.PORT)
     @staticmethod
-    def set_port(val) -> None:
+    def set_port(val: int) -> None:
+        """
+        Sets the host `port` of the modbus client
+        Args:
+            val (int): `port`
+        """
         TrafficLight.PORT = val
         TrafficLight.CLIENT = ModbusClient(TrafficLight.HOST, TrafficLight.PORT)
     class States():
@@ -63,6 +73,7 @@ class TrafficLight():
         else:
             self.state = TrafficLight.States.ALL_OFF
     def update(self) -> None:
+        """ Updates the states of the lights with the current state. """
         if self.state[0]:
             self.red_light.enable()
         else:
@@ -76,6 +87,7 @@ class TrafficLight():
         else:
             self.green_light.disable()
     def write(self) -> None:
+        """ Writes the states of the lights to the Modbus coils. """
         with TrafficLight.CLIENT.connect():
             TrafficLight.CLIENT.write_coil(
                 self.red_light.coil, self.red_light.state)
@@ -84,6 +96,7 @@ class TrafficLight():
             TrafficLight.CLIENT.write_coil(
                 self.green_light.coil, self.green_light.state)
     def read(self) -> List[bool]:
+        """ Reads the current state of the Modbus Coils """
         out = [False, False, False]
         with TrafficLight.CLIENT.connect():
             out[0] = TrafficLight.CLIENT.read_coils(
