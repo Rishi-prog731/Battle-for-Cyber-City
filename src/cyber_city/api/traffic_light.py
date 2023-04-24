@@ -40,7 +40,7 @@ class TrafficLight():
         self.red_light: Light = red_light
         self.yellow_light: Light = yellow_light
         self.green_light: Light = green_light
-        self.state = TrafficLight.States.ALL_OFF
+        self.state: List[bool] = TrafficLight.States.ALL_OFF
     def __str__(self) -> str:
         """
         Returns the current state of the `TrafficLight` as a `string`
@@ -57,7 +57,7 @@ class TrafficLight():
         out += '🔴' if self.red_light.state else '⚫'
         return out
     @property.setter
-    def state(self, val) -> None:
+    def state(self, val: List[bool]) -> None:
         if self.state:
             self.state = val
         else:
