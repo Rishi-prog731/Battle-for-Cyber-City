@@ -1,3 +1,7 @@
+"""
+The class for the lights for the traffic lights.
+"""
+
 class Light():
     """ The light class. """
     def __init__(self, coil: int) -> None:
