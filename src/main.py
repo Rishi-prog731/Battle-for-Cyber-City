@@ -1,4 +1,4 @@
-from cyber_city.api import System, TrafficLight
+from cyber_city.api import System, TrafficLight, PowerGrid
 
 # Lights
 G_NS = System(0)
@@ -13,6 +13,29 @@ NS = TrafficLight(R_NS, Y_NS, G_NS)
 EW = TrafficLight(R_EW, Y_EW, G_EW)
 
 TRAFFICLIGHTS = [NS, EW]
+
+# Power
+BD = System(0)
+HP = System(1)
+PF = System(2)
+IN = System(3)
+UN = System(4)
+RE = System(5)
+
+grid = [BD, HP, PF, IN, UN, RE]
+
+POWERGRID = PowerGrid(grid)
+
+POWERGRID.systems[0].set(True)
+
+print(
+    BD,
+    HP,
+    PF,
+    IN,
+    UN,
+    RE
+)
 
 # Actual City Distrcit Objects with Mappings
 # BUSINESS = District("Business", 0)
