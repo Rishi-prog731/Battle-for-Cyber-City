@@ -1,4 +1,4 @@
-from cyber_city.api import System
+from cyber_city.api import System, TrafficLight
 
 # Lights
 G_NS = System(0)
@@ -8,12 +8,11 @@ G_EW = System(3)
 Y_EW = System(4)
 R_EW = System(5)
 
-# Actual Traffic Light Objects with Mappings
-# NS = TrafficLight(R_NS, Y_NS, G_NS)
-# EW = TrafficLight(R_EW, Y_EW, R_EW)
-# 
-# TRAFFICLIGHTS = [NS, EW]
+# Traffic Lights
+NS = TrafficLight(R_NS, Y_NS, G_NS)
+EW = TrafficLight(R_EW, Y_EW, G_EW)
 
+TRAFFICLIGHTS = [NS, EW]
 
 # Actual City Distrcit Objects with Mappings
 # BUSINESS = District("Business", 0)
