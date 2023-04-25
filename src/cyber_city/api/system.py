@@ -1,5 +1,5 @@
 """ 
-Class for all objects that have a on/oof state
+Class for all objects that have a on/off state
 """
 
 class System():

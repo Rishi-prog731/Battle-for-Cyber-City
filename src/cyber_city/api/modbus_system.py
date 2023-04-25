@@ -1,6 +1,6 @@
 """
-The class for objects that communicate with the modbus server. It conects to the
-server and can read and write.
+Extension of the `System` class. The class for objects that communicate with the
+modbus server. It conects to the server and can read and write.
 """
 
 from pymodbus.client import ModbusTcpClient as ModbusClient
@@ -24,7 +24,7 @@ class ModbusSystem(System):
         """
         String representation of the system
         """
-        return f'{self.coil}: {"✔️" if self.state else "❌"}'
+        return f'{self.coil}: {super().__str__()}'
 
     @property
     def host(self) -> str:
