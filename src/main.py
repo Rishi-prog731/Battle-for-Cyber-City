@@ -1,3 +1,4 @@
+
 from cyber_city.api import System, ModbusSystem, TrafficLight, Power, District, SpecialDistrict
 
 # Lights
@@ -18,22 +19,22 @@ TRAFFICLIGHTS = [NS, EW]
 POWER_GRID = System()
 
 # Power Systems
-BD = Power(0, POWER_GRID)
-HP = Power(1, POWER_GRID)
-PF = Power(2, POWER_GRID)
-IN = Power(3, POWER_GRID)
-UN = Power(4, POWER_GRID)
-RE = Power(5, POWER_GRID)
+BD = Power(6, POWER_GRID)
+HP = Power(7, POWER_GRID)
+PF = Power(8, POWER_GRID)
+IN = Power(9, POWER_GRID)
+UN = Power(10, POWER_GRID)
+RE = Power(11, POWER_GRID)
 
-grid = [BD, HP, PF, IN, UN, RE]
+GRID = [BD, HP, PF, IN, UN, RE]
 
 # Special Districts
-H_P = ModbusSystem(0)
-H_G = ModbusSystem(1)
+H_P = ModbusSystem(12)
+H_G = ModbusSystem(13)
 HOSPITAL = SpecialDistrict("Hospital", HP, H_P, H_G)
 
-PF_P = ModbusSystem(0)
-PF_G = ModbusSystem(1)
+PF_P = ModbusSystem(14)
+PF_G = ModbusSystem(15)
 POLICE_FIRE = SpecialDistrict("Police/Fire", PF, PF_P, PF_G)
 
 # Districts
@@ -44,11 +45,3 @@ RESIDENTIAL = District("Residential", RE)
 
 DISTRICTS = [
     BUSINESS, HOSPITAL, POLICE_FIRE, INDUSTRIAL, UNIVERSITY, RESIDENTIAL]
-
-# Print Districts
-for district in DISTRICTS:
-    print(district)
-    
-# Print Traffic Lights
-for light in TRAFFICLIGHTS:
-    print(light)

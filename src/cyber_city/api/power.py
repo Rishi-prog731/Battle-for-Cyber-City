@@ -1,11 +1,13 @@
 """ Power Object for districts and other things with power control """
 
+from typing import List
+
 from .modbus_system import ModbusSystem
 from .system import System
 
 class Power(ModbusSystem):
     """ Power Object """
-    def __init__(self, coil: int, grid: System,
+    def __init__(self, coil: int, grid: List[ModbusSystem],
                 host: str = '127.0.0.1', port: int = 502) -> None:
         super().__init__(coil, host, port)
         self.power_grid: System = grid
