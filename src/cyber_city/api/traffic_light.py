@@ -5,7 +5,7 @@ easier to manage and program them. It is a wrapper around the `System` class.
 
 from typing import List
 
-from .system import System
+from .modbus_system import ModbusSystem
 
 class TrafficLight():
     """ Traffic Light Object """
@@ -19,8 +19,8 @@ class TrafficLight():
         RED_LIGHT = [True, False, False]
         YELLOW_LIGHT = [False, True, False]
         GREEN_LIGHT = [False, False, True]
-    def __init__(self, red_light: System,
-                yellow_light: System, green_light: System) -> None:
+    def __init__(self, red_light: ModbusSystem,
+                yellow_light: ModbusSystem, green_light: ModbusSystem) -> None:
         """ Initialize the Traffic Light """
         self.red_light = red_light
         self.yellow_light = yellow_light
