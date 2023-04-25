@@ -3,16 +3,25 @@
 - [Documentation](#documentation)
   - [API](#api)
     - [System](#system)
+    - [ModbusSystem](#modbussystem)
+    - [Power](#power)
     - [TrafficLight](#trafficlight)
-    - [PowerGrid](#powergrid)
+    - [District](#district)
+    - [SpecialDistrict](#specialdistrict)
   - [Game](#game)
 
 ## API
 
 ### System
 
+### ModbusSystem
+
+### Power
+
 ### TrafficLight
 
-### PowerGrid
+### District
+
+### SpecialDistrict
 
 ## Game
