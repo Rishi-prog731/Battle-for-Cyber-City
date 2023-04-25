@@ -6,7 +6,6 @@ class System():
     """ The System class """
     def __init__(self):
         self.state = False
-
     def __str__(self) -> str:
         return "✔️" if self.state else "❌"
 

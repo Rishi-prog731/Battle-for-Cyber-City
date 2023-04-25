@@ -20,7 +20,8 @@
     "python.analysis.typeCheckingMode": "off",
     "editor.rulers": [
       80
-    ]
+    ],
+    "liveServer.settings.multiRootWorkspaceName": "Source"
   },
   "tasks": {
     "version": "2.0.0",
