@@ -46,8 +46,8 @@ DISTRICTS = [
     BUSINESS, HOSPITAL, POLICE_FIRE, INDUSTRIAL, UNIVERSITY, RESIDENTIAL]
 
 # Writing and Doing things to the systems
-TRAFFICLIGHTS[0].set_state(TrafficLight.States.YELLOW_LIGHT)
-TRAFFICLIGHTS[1].set_state(TrafficLight.States.ALL_ON)
+TRAFFICLIGHTS[0].set_state(TrafficLight.States.RED_LIGHT)
+TRAFFICLIGHTS[1].set_state(TrafficLight.States.GREEN_LIGHT)
 
 # Write everything
 for system in TRAFFICLIGHTS:
