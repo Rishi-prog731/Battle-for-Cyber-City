@@ -14,3 +14,7 @@ class SpecialDistrict(District):
         self.generator: System = generator
     def __str__(self) -> str:
         return f"{super().__str__()}, Local_Power({self.local_power}), Generator({self.generator})"
+    def write(self) -> None:
+        super().write()
+        self.local_power.write()
+        self.generator.write()
