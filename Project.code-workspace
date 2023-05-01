@@ -1,6 +1,7 @@
 {
   "folders": [
     {
+      "name": "Project",
       "path": "."
     },
     {
@@ -10,11 +11,16 @@
   ],
   "settings": {
     "files.exclude": {
-      "**/src": false
+      "**/src": false,
+      "**/__pycache__": true
     },
     "python.terminal.activateEnvironment": true,
-    "python.analysis.typeCheckingMode": "basic",
-    "python.globalModuleInstallation": false,
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "python.terminal.executeInFileDir": true,
+    "editor.rulers": [
+      80
+    ],
+    "liveServer.settings.multiRootWorkspaceName": "Source"
   },
   "tasks": {
     "version": "2.0.0",
@@ -37,7 +43,7 @@
         "program": "${workspaceFolder:Source}/main.py",
         "console": "integratedTerminal",
         "justMyCode": true
-      },
+      }
     ],
     "compounds": []
   }
