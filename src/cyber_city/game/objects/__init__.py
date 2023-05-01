@@ -7,7 +7,7 @@ from .event import *
 from .role import *
 
 
-def read_objects_from_excel():
+def read_objects_from_excel(path: str):
     """
     !TODO
         - read from excel file and create objects 
@@ -17,4 +17,5 @@ def read_objects_from_excel():
         - document your code with `docstrings`
         - !NOTE: make sure you freeze any dependencies into `requirements.txt`
     """
+    print("READ OBJECTS FROM EXCEL FILE " + path)
     return
