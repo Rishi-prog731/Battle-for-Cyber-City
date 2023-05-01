@@ -1,6 +1,6 @@
-'''
+"""
 This is an example implementation for using the `cyber_city.api` module.
-'''
+"""
 from cyber_city.api import System, ModbusSystem, TrafficLight, Power, District, SpecialDistrict
 
 # Lights
@@ -55,5 +55,5 @@ TRAFFICLIGHTS[1].set_state(TrafficLight.States.GREEN_LIGHT)
 # Write everything
 for system in TRAFFICLIGHTS:
     system.write()
-for system in DISTRICTS:    
+for system in DISTRICTS:
     system.write()
