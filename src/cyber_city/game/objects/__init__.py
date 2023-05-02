@@ -19,4 +19,4 @@ def read_objects_from_excel(filepath):
         objects_dict[sheet_name] = objects_list
     return objects_dict
 
-print("READ OBJECTS FROM EXCEL FILE " + ead_objects_from_excel(filepath))
+print("READ OBJECTS FROM EXCEL FILE " + read_objects_from_excel(filepath))
