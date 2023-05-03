@@ -1,18 +1,14 @@
-"""
-Here the class for the abilities the plays can use are defined.
-"""
-
 class Ability():
-    """The Ability Class"""
-    def __init__(self, name: str, cost: int, modifer: int) -> None:
-        """
-        Initialize a new Ability object.
-
-        Args:
-            name (str): name of the ability
-            cost (int): cost of the ability
-            modifer (int): modifer of the compromised percentage for ability
-        """
+    def __init__(self, name: str, cost: int, modifier: int, matchup = None) -> None:
         self.name: str = name
         self.cost: int = cost
-        self.modifier: int = modifer
+        self.modifier: int = modifier
+        self.matchup: Ability = matchup
+    def __str__(self) -> str:
+        out = ""
+        out += f"Name:\n\t {self.name}\n"
+        out += f"Cost:\n\t {self.cost}\n"
+        out += f"Modifier:\n\t {self.modifier}\n"
+        if self.matchup is not None:
+            out += f"Matchup:\n\t {self.matchup.name}\n"
+        return out
