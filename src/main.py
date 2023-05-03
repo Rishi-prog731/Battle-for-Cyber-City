@@ -1,4 +1,5 @@
-from cyber_city.game import Role, Ability
+from cyber_city.game import Role, Ability, GameDistrict
+from cyber_city.api import Power, ModbusSystem
 
 HACK = Role("Hacker", 5000)
 DEF = Role("Defender", 5000)
@@ -38,3 +39,7 @@ for ability in HACK.abilities:
 for ability in DEF.abilities:
     print(ability)
     print()
+
+POWERGRID = [ ModbusSystem(1) ]
+POWER = Power(1, POWERGRID)
+DIS = GameDistrict("District 1", POWER)

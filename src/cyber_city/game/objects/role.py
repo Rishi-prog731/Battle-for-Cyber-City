@@ -3,7 +3,7 @@ class Role():
         self.name: str = name
         self.budget: int = budget
         self.abilities: list = []
-    
+
     def __str__(self) -> str:
         out = ""
         out += f"Name:\n\t {self.name}\n"
