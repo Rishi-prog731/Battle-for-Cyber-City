@@ -1,4 +1,8 @@
-""" District Class """
+"""
+District Class for containing all the systems in each district. 
+It was refactored to include SpecialDistrict functionality because some
+districts need to be handeled differently. 
+"""
 from .power import Power
 
 from .modbus_system import ModbusSystem

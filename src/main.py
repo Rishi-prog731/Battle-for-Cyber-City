@@ -8,6 +8,9 @@ R_NS = ModbusSystem(2)
 G_EW = ModbusSystem(3)
 Y_EW = ModbusSystem(4)
 R_EW = ModbusSystem(5)
+
+LIGHTS = [G_NS, Y_NS, R_NS, G_EW, Y_EW, R_EW]
+
 # Special District Components
 H_P = ModbusSystem(6)
 H_G = ModbusSystem(7)
@@ -23,23 +26,13 @@ IN = Power(13, POWER_GRID)
 UN = Power(14, POWER_GRID)
 RE = Power(15, POWER_GRID)
 
-# Districts
-HOSPITAL = GameDistrict("Hospital", HP, H_P, H_G)
-POLICE_FIRE = GameDistrict("Police/Fire", PF, P_P, P_G)
-BUSINESS = GameDistrict("Business", BD)
-INDUSTRIAL = GameDistrict("Industrial", IN)
-UNIVERSITY = GameDistrict("University", UN)
-RESIDENTIAL = GameDistrict("Residential", RE)
+GRID = [BD, HP, PF, IN, UN, RE]
 
 # Traffic Lights
 NS = TrafficLight(R_NS, Y_NS, G_NS)
 EW = TrafficLight(R_EW, Y_EW, G_EW)
 
-# Arrays of Objects
-LIGHTS = [G_NS, Y_NS, R_NS, G_EW, Y_EW, R_EW]
-GRID = [BD, HP, PF, IN, UN, RE]
 TRAFFICLIGHTS = [NS, EW]
-DISTRICTS = [BUSINESS, HOSPITAL, POLICE_FIRE, INDUSTRIAL, UNIVERSITY, RESIDENTIAL]
 
 # Defining the Roles
 HACKER = Role("Hacker", 5000)
@@ -78,5 +71,15 @@ DEFENDER.abilities = [ENC, AMAL, FWAL, TRU, HON, MULAUTH, AUDIT]
 # Setting the hacker abilities
 HACKER.abilities = [MITM, MAL, DDOS, PHI, TRO, PSWD, RAN]
 
+# Districts
+HOSPITAL = GameDistrict("Hospital", HP, [MULAUTH, AUDIT], H_P, H_G)
+POLICE_FIRE = GameDistrict("Police/Fire", PF, [FWAL, AUDIT], P_P, P_G)
+BUSINESS = GameDistrict("Business", BD, [FWAL, MULAUTH])
+INDUSTRIAL = GameDistrict("Industrial", IN, [AMAL])
+UNIVERSITY = GameDistrict("University", UN, [TRU, MULAUTH])
+RESIDENTIAL = GameDistrict("Residential", RE, [AMAL, FWAL])
+
+DISTRICTS = [BUSINESS, HOSPITAL, POLICE_FIRE, INDUSTRIAL, UNIVERSITY, RESIDENTIAL]
+
 for i in DISTRICTS:
-    print(i)
+    print(i.name + ": " + str(i.calc_compromise_level()) + "%")

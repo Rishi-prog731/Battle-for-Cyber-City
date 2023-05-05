@@ -29,20 +29,11 @@ class TrafficLight:
         yellow_light: ModbusSystem,
         green_light: ModbusSystem,
     ) -> None:
-        """Initialize the Traffic Light"""
         self.red_light = red_light
         self.yellow_light = yellow_light
         self.green_light = green_light
 
     def __str__(self) -> str:
-        """
-        String representation of the traffic light
-        ⚫️⚫️⚫️: ALL_OFF
-        🔴🟡🟢: ALL_ON
-        🔴⚫️⚫️: RED_LIGHT
-        ⚫️🟡⚫️: YELLOW_LIGHT
-        ⚫️⚫️🟢: GREEN_LIGHT
-        """
         out = ""
         out += "🔴" if self.red_light.state else "⚫️"
         out += "🟡" if self.yellow_light.state else "⚫️"

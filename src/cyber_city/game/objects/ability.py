@@ -13,6 +13,3 @@ class Ability:
         if self.matchup is not None:
             out += f"Matchup: {self.matchup.name}\n"
         return out
-
-    def AFADFSD():
-        pass

@@ -14,18 +14,11 @@ class ModbusSystem(System):
     def __init__(self, coil: int, host: str = "127.0.0.1", port: int = 502) -> None:
         super().__init__()
         self.__host: str = host
-        """ IP address of the ModBus server """
         self.__port: int = port
-        """ Port of the ModBus server """
         self.client = ModbusClient(self.__host, self.__port)
-        """ Client used to connect to the ModBus server """
         self.coil: int = coil
-        """ The coil address of the system on the ModBus server """
 
     def __str__(self) -> str:
-        """
-        String representation of the system
-        """
         return f"{self.coil}: {super().__str__()}"
 
     @property
