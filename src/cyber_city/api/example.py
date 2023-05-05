@@ -1,7 +1,14 @@
 """
 This is an example implementation for using the `cyber_city.api` module.
 """
-from cyber_city.api import System, ModbusSystem, TrafficLight, Power, District, SpecialDistrict
+from cyber_city.api import (
+    System,
+    ModbusSystem,
+    TrafficLight,
+    Power,
+    District,
+    SpecialDistrict,
+)
 
 # Lights
 G_NS = ModbusSystem(0)
@@ -39,14 +46,10 @@ NS = TrafficLight(R_NS, Y_NS, G_NS)
 EW = TrafficLight(R_EW, Y_EW, G_EW)
 
 # Arrays of Objects
-LIGHTS = [
-    G_NS, Y_NS, R_NS, G_EW, Y_EW, R_EW]
-GRID = [
-    BD, HP, PF, IN, UN, RE]
-TRAFFICLIGHTS = [
-    NS, EW]
-DISTRICTS = [
-    BUSINESS, HOSPITAL, POLICE_FIRE, INDUSTRIAL, UNIVERSITY, RESIDENTIAL]
+LIGHTS = [G_NS, Y_NS, R_NS, G_EW, Y_EW, R_EW]
+GRID = [BD, HP, PF, IN, UN, RE]
+TRAFFICLIGHTS = [NS, EW]
+DISTRICTS = [BUSINESS, HOSPITAL, POLICE_FIRE, INDUSTRIAL, UNIVERSITY, RESIDENTIAL]
 
 # Writing and Doing things to the systems
 TRAFFICLIGHTS[0].set_state(TrafficLight.States.RED_LIGHT)

@@ -1,8 +1,13 @@
-class Role():
+from typing import List
+
+from cyber_city.game.objects.ability import Ability
+
+
+class Role:
     def __init__(self, name: str, budget: int) -> None:
         self.name: str = name
         self.budget: int = budget
-        self.abilities: list = []
+        self.abilities: List[Ability] = []
 
     def __str__(self) -> str:
         out = ""

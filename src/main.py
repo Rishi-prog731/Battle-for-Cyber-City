@@ -36,14 +36,10 @@ NS = TrafficLight(R_NS, Y_NS, G_NS)
 EW = TrafficLight(R_EW, Y_EW, G_EW)
 
 # Arrays of Objects
-LIGHTS = [
-    G_NS, Y_NS, R_NS, G_EW, Y_EW, R_EW]
-GRID = [
-    BD, HP, PF, IN, UN, RE]
-TRAFFICLIGHTS = [
-    NS, EW]
-DISTRICTS = [
-    BUSINESS, HOSPITAL, POLICE_FIRE, INDUSTRIAL, UNIVERSITY, RESIDENTIAL]
+LIGHTS = [G_NS, Y_NS, R_NS, G_EW, Y_EW, R_EW]
+GRID = [BD, HP, PF, IN, UN, RE]
+TRAFFICLIGHTS = [NS, EW]
+DISTRICTS = [BUSINESS, HOSPITAL, POLICE_FIRE, INDUSTRIAL, UNIVERSITY, RESIDENTIAL]
 
 # Defining the Roles
 HACKER = Role("Hacker", 5000)
@@ -77,14 +73,10 @@ PSWD.matchup = MULAUTH
 RAN.matchup = AUDIT
 
 # Setting the defender abilities
-DEFENDER.abilities = [
-    ENC, AMAL, FWAL, TRU, HON, MULAUTH, AUDIT
-]
+DEFENDER.abilities = [ENC, AMAL, FWAL, TRU, HON, MULAUTH, AUDIT]
 
 # Setting the hacker abilities
-HACKER.abilities = [
-    MITM, MAL, DDOS, PHI, TRO, PSWD, RAN
-]
+HACKER.abilities = [MITM, MAL, DDOS, PHI, TRO, PSWD, RAN]
 
 for i in DISTRICTS:
     print(i)

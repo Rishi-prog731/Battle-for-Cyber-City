@@ -14,13 +14,18 @@
       "**/src": false,
       "**/__pycache__": true
     },
+    "[python]": {
+      "editor.rulers": [
+        80
+      ],
+      "editor.defaultFormatter": "ms-python.black-formatter"
+    },
     "python.terminal.activateEnvironment": true,
     "python.terminal.activateEnvInCurrentTerminal": true,
     "python.terminal.executeInFileDir": true,
-    "editor.rulers": [
-      80
-    ],
-    "liveServer.settings.multiRootWorkspaceName": "Source"
+    "python.formatting.provider": "none",
+    "python.analysis.typeCheckingMode": "off",
+    "liveServer.settings.multiRootWorkspaceName": "Source",
   },
   "tasks": {
     "version": "2.0.0",

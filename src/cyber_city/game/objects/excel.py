@@ -6,8 +6,10 @@ new data.
 
 import pandas as pd
 
-class Excel():
-    """ The functions used to read game data from an excel file. """
+
+class Excel:
+    """The functions used to read game data from an excel file."""
+
     @staticmethod
     def read_objects_from_excel(filepath):
         xl = pd.ExcelFile(filepath)
@@ -16,7 +18,7 @@ class Excel():
             df = pd.read_excel(filepath, sheet_name=sheet_name)
             objects_list = []
             for _, row in df.iterrows():
-                obj = row #add whatever object you felt like adding
+                obj = row  # add whatever object you felt like adding
                 objects_list.append(obj)
             objects_dict[sheet_name] = objects_list
         return objects_dict
