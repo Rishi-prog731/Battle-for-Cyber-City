@@ -42,15 +42,16 @@ class GameDistrict(District):
         out = 0
 
         # Add Default Abilities to Compromise Level
-        for ability in self.default_abilities:
+        for ability in dict.fromkeys(self.default_abilities):
             out -= ability.modifier
 
         # Add Active Defences to Compromise Level
-        for ability in self.active_defenses:
-            out -= ability.modifier
+        for ability in dict.fromkeys(self.active_defenses):
+            if not ability in self.default_abilities:
+                out -= ability.modifier
 
         # Add active attacks but if matchup modify the attack modifier
-        for ability in self.active_attacks:
+        for ability in dict.fromkeys(self.active_attacks):
             if (
                 ability.matchup in self.active_defenses
                 or ability.matchup in self.default_abilities
