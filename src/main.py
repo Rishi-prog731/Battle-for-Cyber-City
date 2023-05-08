@@ -1,35 +1,35 @@
 from cyber_city.game import Role, Ability, GameDistrict
 from cyber_city.api import System, ModbusSystem, Power, TrafficLight
 
-IP_1 = "10.10.0.1"  # Power
-IP_2 = "10.10.0.2"  # Hospital
-IP_3 = "10.10.0.3"  # Police/Fire
-IP_4 = "10.10.0.4"  # Traffic
+IP_POWER = "10.10.0.1"  # Power
+IP_HOSPITAL = "10.10.0.2"  # Hospital
+IP_POLICE_FIRE = "10.10.0.3"  # Police/Fire
+IP_TRAFFIC = "10.10.0.4"  # Traffic
 
 # Lights
-G_NS = ModbusSystem(0, IP_4)
-Y_NS = ModbusSystem(1, IP_4)
-R_NS = ModbusSystem(2, IP_4)
-G_EW = ModbusSystem(3, IP_4)
-Y_EW = ModbusSystem(4, IP_4)
-R_EW = ModbusSystem(5, IP_4)
+G_NS = ModbusSystem(0, IP_TRAFFIC)
+Y_NS = ModbusSystem(1, IP_TRAFFIC)
+R_NS = ModbusSystem(2, IP_TRAFFIC)
+G_EW = ModbusSystem(3, IP_TRAFFIC)
+Y_EW = ModbusSystem(4, IP_TRAFFIC)
+R_EW = ModbusSystem(5, IP_TRAFFIC)
 
 LIGHTS = [G_NS, Y_NS, R_NS, G_EW, Y_EW, R_EW]
 
 # Special District Components
-H_P = ModbusSystem(6, IP_2)
-H_G = ModbusSystem(7, IP_2)
-P_P = ModbusSystem(8, IP_3)
-P_G = ModbusSystem(9, IP_3)
+H_P = ModbusSystem(6, IP_HOSPITAL)
+H_G = ModbusSystem(7, IP_HOSPITAL)
+P_P = ModbusSystem(8, IP_POLICE_FIRE)
+P_G = ModbusSystem(9, IP_POLICE_FIRE)
 # Power Grid
 POWER_GRID = System()
 # Power Systems
-BD = Power(10, POWER_GRID, IP_1)
-HP = Power(11, POWER_GRID, IP_1)
-PF = Power(12, POWER_GRID, IP_1)
-IN = Power(13, POWER_GRID, IP_1)
-UN = Power(14, POWER_GRID, IP_1)
-RE = Power(15, POWER_GRID, IP_1)
+BD = Power(10, POWER_GRID, IP_POWER)
+HP = Power(11, POWER_GRID, IP_POWER)
+PF = Power(12, POWER_GRID, IP_POWER)
+IN = Power(13, POWER_GRID, IP_POWER)
+UN = Power(14, POWER_GRID, IP_POWER)
+RE = Power(15, POWER_GRID, IP_POWER)
 
 GRID = [BD, HP, PF, IN, UN, RE]
 
