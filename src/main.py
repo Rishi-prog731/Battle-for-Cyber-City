@@ -1,4 +1,4 @@
-from cyber_city.game import Role, Ability, GameDistrict
+from cyber_city.game import Role, Ability, GameDistrict, Game
 from cyber_city.api import System, ModbusSystem, Power, TrafficLight
 
 IP_POWER = "10.10.0.1"  # Power
@@ -39,10 +39,6 @@ EW = TrafficLight(R_EW, Y_EW, G_EW)
 
 TRAFFICLIGHTS = [NS, EW]
 
-# Defining the Roles
-HACKER = Role("Hacker", 5000)
-DEFENDER = Role("Defender", 5000)
-
 # Defining the Defenders Abilities
 ENC = Ability("Data Encryption", 300, 10)
 AMAL = Ability("Anti-Malware", 600, 30)
@@ -70,12 +66,6 @@ TRO.matchup = HON
 PSWD.matchup = MULAUTH
 RAN.matchup = AUDIT
 
-# Setting the defender abilities
-DEFENDER.abilities = [ENC, AMAL, FWAL, TRU, HON, MULAUTH, AUDIT]
-
-# Setting the hacker abilities
-HACKER.abilities = [MITM, MAL, DDOS, PHI, TRO, PSWD, RAN]
-
 # Districts
 HOSPITAL = GameDistrict("Hospital", HP, [MULAUTH, AUDIT], H_P, H_G)
 POLICE_FIRE = GameDistrict("Police/Fire", PF, [FWAL, AUDIT], P_P, P_G)
@@ -86,5 +76,13 @@ RESIDENTIAL = GameDistrict("Residential", RE, [AMAL, FWAL])
 
 DISTRICTS = [BUSINESS, HOSPITAL, POLICE_FIRE, INDUSTRIAL, UNIVERSITY, RESIDENTIAL]
 
-for i in DISTRICTS:
-    print(i.name + ": " + str(i.calc_compromise_level()) + "%")
+GAME = Game(
+    5000,
+    5000,
+    10,
+    [ENC, AMAL, FWAL, TRU, HON, MULAUTH, AUDIT],
+    [MITM, MAL, DDOS, PHI, TRO, PSWD, RAN],
+    DISTRICTS,
+    POWER_GRID,
+    TRAFFICLIGHTS,
+)

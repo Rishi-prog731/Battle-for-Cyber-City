@@ -50,7 +50,7 @@ class CyberCityGameRules:
 """
 Reading in file using pandas
 """
-df = pd.read_excel("game_rules.xlsx")
+df = pd.read_excel("game_data.xlsx")
 """
 Getting values of variables from excel file
 """

@@ -13,7 +13,7 @@ class Game:
         defender_abilities: List[Ability] = [],
         attacker_abilities: List[Ability] = [],
         districts: List[GameDistrict] = [],
-        power_grid: List[System] = [],
+        power_grid: System = System(),
         traffic_lights: List[TrafficLight] = [],
     ) -> None:
         self.max_rounds = max_rounds
