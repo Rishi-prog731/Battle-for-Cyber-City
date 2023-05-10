@@ -10,6 +10,9 @@ from cyber_city.game import Role, Ability, GameDistrict
 from cyber_city.api import CyberCity, System, TrafficLight
 
 
+excelFileName = input("What file name do you want")
+
+
 class Game(CyberCity):
     """
     Game is the main class that holds all the components of the game
@@ -68,7 +71,7 @@ class CyberCityGameRules:
 """
 Reading in file using pandas
 """
-df = pd.read_excel("game_data.xlsx")
+df = pd.read_excel(excelFileName)
 """
 Getting values of variables from excel file
 """
