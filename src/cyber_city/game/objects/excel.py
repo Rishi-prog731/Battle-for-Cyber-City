@@ -23,11 +23,22 @@ class Excel:
             objects_dict[sheet_name] = objects_list
         return objects_dict
 '''
- """Import statements"""  
+"""Import statements"""
 import pandas as pd
+
 """Main class variables"""
+
+
 class CyberCityGameRules:
-    def __init__(self, turns, budget, actions_per_turn, defender_turn, attacker_turn, compromise_threshold):
+    def __init__(
+        self,
+        turns,
+        budget,
+        actions_per_turn,
+        defender_turn,
+        attacker_turn,
+        compromise_threshold,
+    ):
         self.turns = turns
         self.budget = budget
         self.actions_per_turn = actions_per_turn
@@ -35,27 +46,42 @@ class CyberCityGameRules:
         self.attacker_turn = attacker_turn
         self.compromise_threshold = compromise_threshold
 
+
 """
 Reading in file using pandas
 """
-df = pd.read_excel('game_rules.xlsx')
+df = pd.read_excel("game_rules.xlsx")
 """
 Getting values of variables from excel file
 """
-turns = df.loc[df['Rule'] == 'Turns', 'Description'].values[0]
-budget_defender = df.loc[df['Rule'] == 'Budget', 'Defender'].values[0]
-budget_attacker = df.loc[df['Rule'] == 'Budget', 'Attacker'].values[0]
-actions_per_turn = df.loc[df['Rule'] == 'Action per turn', 'Description'].values[0]
-defender_turn_desc = df.loc[df['Rule'] == "Defender's turn", 'Description'].values[0]
-defender_turn_success_rate = df.loc[df['Rule'] == "Defender's turn", 'Success rate'].values[0]
-attacker_turn_desc = df.loc[df['Rule'] == "Attacker's turn", 'Description'].values[0]
-attacker_turn_success_rate = df.loc[df['Rule'] == "Attacker's turn", 'Success rate'].values[0]
-compromise_threshold = df.loc[df['Rule'] == 'Compromise Threshold', 'Description'].values[0]
+turns = df.loc[df["Rule"] == "Turns", "Description"].values[0]
+budget_defender = df.loc[df["Rule"] == "Budget", "Defender"].values[0]
+budget_attacker = df.loc[df["Rule"] == "Budget", "Attacker"].values[0]
+actions_per_turn = df.loc[df["Rule"] == "Action per turn", "Description"].values[0]
+defender_turn_desc = df.loc[df["Rule"] == "Defender's turn", "Description"].values[0]
+defender_turn_success_rate = df.loc[
+    df["Rule"] == "Defender's turn", "Success rate"
+].values[0]
+attacker_turn_desc = df.loc[df["Rule"] == "Attacker's turn", "Description"].values[0]
+attacker_turn_success_rate = df.loc[
+    df["Rule"] == "Attacker's turn", "Success rate"
+].values[0]
+compromise_threshold = df.loc[
+    df["Rule"] == "Compromise Threshold", "Description"
+].values[0]
 
 """Creating object using the variables from excel"""
-game_rules = CyberCityGameRules(turns=turns, 
-                                budget={'defender': budget_defender, 'attacker': budget_attacker},
-                                actions_per_turn=actions_per_turn,
-                                defender_turn={'description': defender_turn_desc, 'success_rate': defender_turn_success_rate},
-                                attacker_turn={'description': attacker_turn_desc, 'success_rate': attacker_turn_success_rate},
-                                compromise_threshold=compromise_threshold)
+game_rules = CyberCityGameRules(
+    turns=turns,
+    budget={"defender": budget_defender, "attacker": budget_attacker},
+    actions_per_turn=actions_per_turn,
+    defender_turn={
+        "description": defender_turn_desc,
+        "success_rate": defender_turn_success_rate,
+    },
+    attacker_turn={
+        "description": attacker_turn_desc,
+        "success_rate": attacker_turn_success_rate,
+    },
+    compromise_threshold=compromise_threshold,
+)
