@@ -20,6 +20,12 @@
       ],
       "editor.defaultFormatter": "ms-python.black-formatter"
     },
+    "material-icon-theme.folders.associations": {
+      "game": "src",
+      "api": "src",
+      "objects": "src",
+      "cyber_city": "python",
+    },
     "python.terminal.activateEnvironment": true,
     "python.terminal.activateEnvInCurrentTerminal": true,
     "python.terminal.executeInFileDir": true,

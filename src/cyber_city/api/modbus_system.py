@@ -45,9 +45,11 @@ class ModbusSystem(System):
         """Write the value of `state` to the modbus server"""
         if self.client.connect():
             self.client.write_coil(self.coil, self.state)
+            self.client.close()
 
     def read(self) -> bool:
         """Read and return the value of the system from the modbus server"""
         if self.client.connect():
             result = self.client.read_coils(self.coil, 0)
+            self.client.close()
             return result.bits[0]

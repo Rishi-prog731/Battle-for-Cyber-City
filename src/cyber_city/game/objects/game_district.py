@@ -1,3 +1,8 @@
+"""
+Game District Object inherits from District and adds game specific attributes
+such as compromised level, active attacks, active defenses, and events.
+"""
+
 from typing import List
 
 from cyber_city.api import District, Power, System, ModbusSystem
@@ -5,6 +10,13 @@ from cyber_city.game.objects import Event, Ability
 
 
 class GameDistrict(District):
+    """
+    Game District Object inherits from District and adds game specific attributes
+
+    Args:
+        District (District): District class that holds the information about a district
+    """
+
     def __init__(
         self,
         name: str,
@@ -39,6 +51,12 @@ class GameDistrict(District):
         return out
 
     def calc_compromise_level(self) -> int:
+        """
+        Calculates the compromise level of the district
+
+        Returns:
+            int: The compromise level of the district
+        """
         out = 0
 
         # Add Default Abilities to Compromise Level

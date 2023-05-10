@@ -1,4 +1,4 @@
-from cyber_city.game import Role, Ability, GameDistrict, Game
+from cyber_city.game import Ability, GameDistrict, Game
 from cyber_city.api import System, ModbusSystem, Power, TrafficLight
 
 IP_POWER = "10.10.0.1"  # Power
@@ -86,3 +86,4 @@ GAME = Game(
     POWER_GRID,
     TRAFFICLIGHTS,
 )
+GAME.write_all()

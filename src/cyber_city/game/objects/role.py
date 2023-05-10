@@ -1,9 +1,17 @@
+"""
+Role class that holds the information about the role of the players
+"""
+
 from typing import List
 
 from cyber_city.game.objects.ability import Ability
 
 
 class Role:
+    """
+    Role class that holds the information about the role of the players
+    """
+
     def __init__(self, name: str, budget: int) -> None:
         self.name: str = name
         self.budget: int = budget
