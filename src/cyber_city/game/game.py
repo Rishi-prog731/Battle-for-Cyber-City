@@ -1,6 +1,6 @@
 from typing import List
 
-from cyber_city.game import Role, Ability, District
+from cyber_city.game import Role, Ability, GameDistrict
 from cyber_city.api import System, TrafficLight
 
 
@@ -12,7 +12,7 @@ class Game:
         max_rounds: int = 10,
         defender_abilities: List[Ability] = [],
         attacker_abilities: List[Ability] = [],
-        districts: List[District] = [],
+        districts: List[GameDistrict] = [],
         power_grid: List[System] = [],
         traffic_lights: List[TrafficLight] = [],
     ) -> None:
